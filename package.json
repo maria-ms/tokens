@@ -1,0 +1,70 @@
+{
+  "name": "@maria-ms/tokens",
+  "version": "1.0.0",
+  "description": "Design system tokens generated from Figma variables for CSS, JavaScript, and React Native.",
+  "type": "module",
+  "sideEffects": [
+    "./dist/css/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maria-ms/tokens.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maria-ms/tokens/issues"
+  },
+  "homepage": "https://github.com/maria-ms/tokens#readme",
+  "keywords": [
+    "tokens",
+    "design-tokens",
+    "style-dictionary",
+    "figma",
+    "css-variables",
+    "react-native"
+  ],
+  "exports": {
+    "./css/light": "./dist/css/light.css",
+    "./css/dark": "./dist/css/dark.css",
+    "./json/light": "./dist/json/light.json",
+    "./json/dark": "./dist/json/dark.json",
+    "./js/light": {
+      "types": "./dist/js/light/tokens.d.ts",
+      "import": "./dist/js/light/tokens.mjs",
+      "default": "./dist/js/light/tokens.mjs"
+    },
+    "./js/dark": {
+      "types": "./dist/js/dark/tokens.d.ts",
+      "import": "./dist/js/dark/tokens.mjs",
+      "default": "./dist/js/dark/tokens.mjs"
+    },
+    "./react-native/light": {
+      "types": "./dist/react-native/light/tokens.d.ts",
+      "import": "./dist/react-native/light/tokens.mjs",
+      "default": "./dist/react-native/light/tokens.mjs"
+    },
+    "./react-native/dark": {
+      "types": "./dist/react-native/dark/tokens.d.ts",
+      "import": "./dist/react-native/dark/tokens.mjs",
+      "default": "./dist/react-native/dark/tokens.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "dev": "node --watch --watch-path=sources --watch-path=src src/build.mjs",
+    "build": "node src/build.mjs",
+    "test": "node --test \"src/**/*.test.mjs\" \"test/**/*.test.mjs\"",
+    "check": "npm run build && npm run test",
+    "prepack": "npm run build"
+  },
+  "devDependencies": {
+    "style-dictionary": "latest"
+  }
+}

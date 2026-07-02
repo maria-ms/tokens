@@ -1,0 +1,63 @@
+name: integration
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+
+      - name: setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 26.x
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: check
+        run: npm run check
+
+  publish:
+    name: publish to npm
+    needs: check
+    if: github.event_name == 'release' && github.event.action == 'published'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+
+      - name: setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 26.x
+          registry-url: https://registry.npmjs.org
+          cache: npm
+
+      - name: install
+        run: npm ci
+
+      - name: publish
+        run: npm publish
