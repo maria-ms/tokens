@@ -19,8 +19,24 @@ const hasDimensionPath = (path, recipe) => {
   );
 };
 
+const hasPercentagePath = (path, recipe) => {
+  const pathName = path.join("/");
+  return (
+    recipe.numberPercentages?.pathPrefixes?.some((prefix) =>
+      pathName.startsWith(prefix),
+    ) ||
+    recipe.numberPercentages?.pathMatchers?.some(
+      (matcher) =>
+        (!matcher.includes || path.includes(matcher.includes)) &&
+        (!matcher.endsWith || path.at(-1) === matcher.endsWith),
+    )
+  );
+};
+
 const isPxNumber = (token, recipe) =>
   hasDimensionScope(token, recipe) || hasDimensionPath(token.path, recipe);
+const isPercentageNumber = (token, recipe) =>
+  token.type === "number" && hasPercentagePath(token.path, recipe);
 
 const dtcgPath = (parts) =>
   parts.map((part) => (part === "$root" ? "root" : part));
@@ -99,7 +115,8 @@ const colorHex = (value, name) => {
 };
 
 const tokenType = (token, recipe) =>
-  token.type === "number" && isPxNumber(token, recipe)
+  token.type === "number" &&
+  (isPxNumber(token, recipe) || isPercentageNumber(token, recipe))
     ? "dimension"
     : token.type;
 
@@ -107,6 +124,9 @@ const tokenValue = (token, recipe, $type) => {
   if (token.alias) return aliasReference(token.alias, recipe);
   if (isReference(token.value)) return dtcgReference(token.value);
   if ($type === "color") return colorHex(token.value, tokenName(token));
+  if (isPercentageNumber(token, recipe)) {
+    return { value: token.value / 100, unit: "em" };
+  }
   if ($type === "dimension") return { value: token.value, unit: "px" };
   return token.value;
 };

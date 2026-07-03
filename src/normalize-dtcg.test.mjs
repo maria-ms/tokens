@@ -11,6 +11,10 @@ const recipe = {
     pathPrefixes: ["space"],
     pathMatchers: [{ includes: "shadow", endsWith: "spread" }],
   },
+  numberPercentages: {
+    pathPrefixes: ["font/letter-spacing"],
+    pathMatchers: [{ includes: "typography", endsWith: "letter-spacing" }],
+  },
   themes: [{ id: "light" }],
 };
 
@@ -60,6 +64,11 @@ describe("DTCG translation", () => {
           value: { hex: "#112233", alpha: 0.5 },
         }),
         figmaToken({ path: ["space", "2"], type: "number", value: 8 }),
+        figmaToken({
+          path: ["font", "letter-spacing", "tight"],
+          type: "number",
+          value: 2,
+        }),
         figmaToken({ path: ["opacity", "50"], type: "number", value: 0.5 }),
       ],
       light: [
@@ -84,6 +93,10 @@ describe("DTCG translation", () => {
           type: "number",
           value: 4,
         }),
+        figmaToken({
+          path: ["semantic", "typography", "body", "small", "letter-spacing"],
+          alias: primitiveAlias("font/letter-spacing/tight"),
+        }),
       ],
     });
 
@@ -105,6 +118,15 @@ describe("DTCG translation", () => {
       value: 8,
       unit: "px",
     });
+    assert.deepEqual(
+      tokenAt(dtcg.base, [
+        "primitive",
+        "font",
+        "letter-spacing",
+        "tight",
+      ]).$value,
+      { value: 0.02, unit: "em" },
+    );
     assert.equal(
       tokenAt(dtcg.base, ["primitive", "opacity", "50"]).$value,
       0.5,
@@ -145,6 +167,16 @@ describe("DTCG translation", () => {
         "spread",
       ]).$value,
       { value: 4, unit: "px" },
+    );
+    assert.equal(
+      tokenAt(dtcg.themes.light, [
+        "semantic",
+        "typography",
+        "body",
+        "small",
+        "letter-spacing",
+      ]).$value,
+      "{primitive.font.letter-spacing.tight}",
     );
 
     for (const [label, run, message] of [

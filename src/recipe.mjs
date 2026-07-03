@@ -35,6 +35,10 @@ export const recipe = {
       { includes: "shadow", endsWith: "offset-y" },
     ],
   },
+  numberPercentages: {
+    pathPrefixes: ["font/letter-spacing"],
+    pathMatchers: [{ includes: "typography", endsWith: "letter-spacing" }],
+  },
   themes: [
     {
       id: "light",

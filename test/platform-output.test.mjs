@@ -12,6 +12,7 @@ const brokenCssValue =
 const color =
   /^(?:#[0-9a-f]{6}(?:[0-9a-f]{2})?|rgba\(\d{1,3}, \d{1,3}, \d{1,3}, (?:0|1|0?\.\d+)\))$/i;
 const pxDimension = /^-?\d+(?:\.\d+)?px$/;
+const emDimension = /^-?\d+(?:\.\d+)?em$/;
 const nativeReferenceLeak = /var\(|--ds-|\{[^}]+\}/;
 
 const tokenAt = (tokens, path) => {
@@ -49,10 +50,9 @@ const assertNativeDimension = (value, label) => {
     "number",
     label + ".scale should be numeric",
   );
-  assert.equal(
-    value?.original?.unit,
-    "px",
-    label + ".original.unit should preserve px",
+  assert.ok(
+    ["px", "em"].includes(value?.original?.unit),
+    label + ".original.unit should preserve px or em",
   );
 };
 
@@ -93,6 +93,14 @@ describe("Generated platform outputs", () => {
       lightCss,
       /--ds-semantic-shadow-focused-4px-spread:\s*var\(--ds-primitive-shadow-focused-4px-spread\);/,
     );
+    assert.match(
+      lightCss,
+      /--ds-primitive-font-letter-spacing-tight:\s*0\.02em;/,
+    );
+    assert.match(
+      lightCss,
+      /--ds-semantic-typography-label-default-letter-spacing:\s*var\(--ds-primitive-font-letter-spacing-wide\);/,
+    );
     assert.match(lightCss, /--ds-primitive-font-weight-medium:\s*500;/);
     assert.equal(
       tokenValue(lightJs, ["primitive", "font", "weight", "medium"]),
@@ -110,6 +118,16 @@ describe("Generated platform outputs", () => {
       ],
       [lightJs, ["primitive", "space", "02"], pxDimension],
       [lightJs, ["semantic", "shadow", "focused-4px", "spread"], pxDimension],
+      [
+        lightJs,
+        ["primitive", "font", "letter-spacing", "tight"],
+        emDimension,
+      ],
+      [
+        lightJs,
+        ["semantic", "typography", "label", "default", "letter-spacing"],
+        emDimension,
+      ],
     ]) {
       assert.match(
         tokenValue(tokens, path),
