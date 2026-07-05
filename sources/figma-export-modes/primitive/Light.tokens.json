@@ -12714,6 +12714,21 @@
   "space": {
     "10": {
       "$type": "number",
+      "$value": 48,
+      "$description": "Spacing step 9 — 48px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:4:69",
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT",
+          "GAP"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--primitive-space-09)"
+        }
+      }
+    },
+    "11": {
+      "$type": "number",
       "$value": 64,
       "$description": "Spacing step 10 — 64px",
       "$extensions": {
@@ -12727,7 +12742,7 @@
         }
       }
     },
-    "11": {
+    "12": {
       "$type": "number",
       "$value": 80,
       "$description": "Spacing step 11 — 80px",
@@ -12742,7 +12757,7 @@
         }
       }
     },
-    "12": {
+    "13": {
       "$type": "number",
       "$value": 96,
       "$description": "Spacing step 12 — 96px",
@@ -12757,7 +12772,7 @@
         }
       }
     },
-    "13": {
+    "14": {
       "$type": "number",
       "$value": 160,
       "$description": "Spacing step 13 — 160px",
@@ -12847,7 +12862,7 @@
         }
       }
     },
-    "06": {
+    "07": {
       "$type": "number",
       "$value": 24,
       "$description": "Spacing step 6 — 24px",
@@ -12862,7 +12877,7 @@
         }
       }
     },
-    "07": {
+    "08": {
       "$type": "number",
       "$value": 32,
       "$description": "Spacing step 7 — 32px",
@@ -12877,7 +12892,7 @@
         }
       }
     },
-    "08": {
+    "09": {
       "$type": "number",
       "$value": 40,
       "$description": "Spacing step 8 — 40px",
@@ -12892,19 +12907,14 @@
         }
       }
     },
-    "09": {
+    "06": {
       "$type": "number",
-      "$value": 48,
-      "$description": "Spacing step 9 — 48px",
+      "$value": 20,
       "$extensions": {
-        "com.figma.variableId": "VariableID:4:69",
+        "com.figma.variableId": "VariableID:40021371:1084",
         "com.figma.scopes": [
-          "WIDTH_HEIGHT",
-          "GAP"
-        ],
-        "com.figma.codeSyntax": {
-          "WEB": "var(--primitive-space-09)"
-        }
+          "ALL_SCOPES"
+        ]
       }
     }
   },
