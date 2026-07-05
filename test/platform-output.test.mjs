@@ -101,6 +101,10 @@ describe("Generated platform outputs", () => {
       lightCss,
       /--ds-semantic-typography-label-default-letter-spacing:\s*var\(--ds-primitive-font-letter-spacing-wide\);/,
     );
+    assert.match(
+      lightCss,
+      /--ds-component-dropdown-menu-width:\s*240px;/,
+    );
     assert.match(lightCss, /--ds-primitive-font-weight-medium:\s*500;/);
     assert.equal(
       tokenValue(lightJs, ["primitive", "font", "weight", "medium"]),

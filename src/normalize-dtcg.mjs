@@ -13,6 +13,9 @@ const hasDimensionPath = (path, recipe) => {
     ) ||
     recipe.numberDimensions?.pathMatchers?.some(
       (matcher) =>
+        (!matcher.startsWith ||
+          pathName === matcher.startsWith ||
+          pathName.startsWith(matcher.startsWith + "/")) &&
         (!matcher.includes || path.includes(matcher.includes)) &&
         (!matcher.endsWith || path.at(-1) === matcher.endsWith),
     )
@@ -27,6 +30,9 @@ const hasPercentagePath = (path, recipe) => {
     ) ||
     recipe.numberPercentages?.pathMatchers?.some(
       (matcher) =>
+        (!matcher.startsWith ||
+          pathName === matcher.startsWith ||
+          pathName.startsWith(matcher.startsWith + "/")) &&
         (!matcher.includes || path.includes(matcher.includes)) &&
         (!matcher.endsWith || path.at(-1) === matcher.endsWith),
     )

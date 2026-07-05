@@ -9,7 +9,11 @@ const recipe = {
   numberDimensions: {
     figmaScopes: ["GAP"],
     pathPrefixes: ["space"],
-    pathMatchers: [{ includes: "shadow", endsWith: "spread" }],
+    pathMatchers: [
+      { includes: "shadow", endsWith: "spread" },
+      { startsWith: "component", includes: "width" },
+      { startsWith: "component", includes: "size" },
+    ],
   },
   numberPercentages: {
     pathPrefixes: ["font/letter-spacing"],
@@ -97,6 +101,16 @@ describe("DTCG translation", () => {
           path: ["semantic", "typography", "body", "small", "letter-spacing"],
           alias: primitiveAlias("font/letter-spacing/tight"),
         }),
+        figmaToken({
+          path: ["component", "dropdown", "menu", "width"],
+          type: "number",
+          value: 240,
+        }),
+        figmaToken({
+          path: ["component", "avatar", "size", "md"],
+          type: "number",
+          value: 40,
+        }),
       ],
     });
 
@@ -177,6 +191,19 @@ describe("DTCG translation", () => {
         "letter-spacing",
       ]).$value,
       "{primitive.font.letter-spacing.tight}",
+    );
+    assert.deepEqual(
+      tokenAt(dtcg.themes.light, [
+        "component",
+        "dropdown",
+        "menu",
+        "width",
+      ]).$value,
+      { value: 240, unit: "px" },
+    );
+    assert.deepEqual(
+      tokenAt(dtcg.themes.light, ["component", "avatar", "size", "md"]).$value,
+      { value: 40, unit: "px" },
     );
 
     for (const [label, run, message] of [
