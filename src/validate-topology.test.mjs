@@ -43,7 +43,10 @@ const validContext = () => ({
   recipe,
   figmaModes: { primitive: "Light", light: "Light", dark: "Dark" },
   figmaTokens: {
-    primitive: [figmaToken({ path: ["color", "brand", "500"] })],
+    primitive: [
+      figmaToken({ path: ["color", "brand", "500"] }),
+      figmaToken({ path: ["space", "07"], type: "number", value: 40 }),
+    ],
     light: [
       figmaToken({
         path: ["semantic", "color", "background", "default"],
@@ -52,6 +55,12 @@ const validContext = () => ({
       figmaToken({
         path: ["component", "button", "background"],
         alias: semanticAlias(),
+      }),
+      figmaToken({
+        path: ["component", "button", "height", "md"],
+        type: "number",
+        value: 40,
+        alias: primitiveAlias("space/07"),
       }),
     ],
     dark: [
@@ -63,6 +72,13 @@ const validContext = () => ({
       figmaToken({
         path: ["component", "button", "background"],
         alias: semanticAlias(),
+        modeName: "Dark",
+      }),
+      figmaToken({
+        path: ["component", "button", "height", "md"],
+        type: "number",
+        value: 40,
+        alias: primitiveAlias("space/07"),
         modeName: "Dark",
       }),
     ],
@@ -89,7 +105,7 @@ const cases = [
   },
   {
     name: "light and dark token path mismatches",
-    edit: (context) => context.figmaTokens.dark.pop(),
+    edit: (context) => context.figmaTokens.dark.splice(1, 1),
     error: new RegExp("Only in light: component/button/background"),
   },
   {
@@ -106,14 +122,14 @@ const cases = [
     error: new RegExp("light/dark type mismatch"),
   },
   {
-    name: "component aliases that skip semantic tokens",
+    name: "component color aliases that skip semantic tokens",
     edit: (context) => {
       context.figmaTokens.light[1] = figmaToken({
         path: ["component", "button", "background"],
         alias: primitiveAlias(),
       });
     },
-    error: /component aliases primitive directly/,
+    error: /component color aliases primitive directly/,
   },
   {
     name: "aliases pointing at missing tokens",

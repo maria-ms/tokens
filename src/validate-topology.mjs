@@ -157,10 +157,13 @@ const validateThemeAliases = (
     }
     if (
       token.path[0] === "component" &&
+      token.type === "color" &&
       alias?.targetVariableSetName === recipe.base.collection
     ) {
       errors.push(
-        themeId + ": component aliases primitive directly: " + tokenName(token),
+        themeId +
+          ": component color aliases primitive directly: " +
+          tokenName(token),
       );
     }
     if (
