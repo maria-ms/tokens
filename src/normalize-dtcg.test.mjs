@@ -67,6 +67,14 @@ describe("DTCG translation", () => {
           path: ["color", "overlay", "50"],
           value: { hex: "#112233", alpha: 0.5 },
         }),
+        figmaToken({
+          path: ["color", "alpha", "brand", "50"],
+          value: { hex: "#6633ff", alpha: 0.05 },
+        }),
+        figmaToken({
+          path: ["shadow", "focused-4px", "color"],
+          value: "{color.alpha.brand.50}",
+        }),
         figmaToken({ path: ["space", "2"], type: "number", value: 8 }),
         figmaToken({
           path: ["font", "letter-spacing", "tight"],
@@ -127,6 +135,11 @@ describe("DTCG translation", () => {
     assert.equal(
       tokenAt(dtcg.base, ["primitive", "color", "overlay", "50"]).$value,
       "#11223380",
+    );
+    assert.equal(
+      tokenAt(dtcg.base, ["primitive", "shadow", "focused-4px", "color"])
+        .$value,
+      "{primitive.color.alpha.brand.50}",
     );
     assert.deepEqual(tokenAt(dtcg.base, ["primitive", "space", "2"]).$value, {
       value: 8,

@@ -98,13 +98,22 @@ describe("Figma source snapshot pipeline", () => {
         "focused-4px",
         "color",
       ]).$value,
+      /^\{primitive\.shadow\.focused-4px-primary\.color\}/,
+    );
+    assert.match(
+      tokenAt(result.dtcg.base, [
+        "primitive",
+        "shadow",
+        "focused-4px-primary",
+        "color",
+      ]).$value,
       /^\{primitive\.color\.alpha\./,
     );
     assert.equal(
       tokenAt(result.dtcg.base, [
         "primitive",
         "shadow",
-        "focused-4px",
+        "focused-4px-primary",
         "spread",
       ]).$value.unit,
       "px",
@@ -116,7 +125,7 @@ describe("Figma source snapshot pipeline", () => {
         "focused-4px",
         "spread",
       ]).$value,
-      "{primitive.shadow.focused-4px.spread}",
+      "{primitive.shadow.focused-4px-primary.spread}",
     );
   });
 });

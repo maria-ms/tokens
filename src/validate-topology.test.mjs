@@ -3,7 +3,7 @@ import { describe, test } from "node:test";
 import { validateTopology } from "./validate-topology.mjs";
 
 const recipe = {
-  base: { id: "primitive", collection: "primitive" },
+  base: { id: "primitive", collection: "primitive", prefix: ["primitive"] },
   themeCollection: "tokens",
   themes: [{ id: "light" }, { id: "dark" }],
 };
@@ -45,6 +45,14 @@ const validContext = () => ({
   figmaTokens: {
     primitive: [
       figmaToken({ path: ["color", "brand", "500"] }),
+      figmaToken({
+        path: ["color", "alpha", "brand", "50"],
+        value: "{color.brand.500}",
+      }),
+      figmaToken({
+        path: ["shadow", "focused-4px", "color"],
+        value: "{color.alpha.brand.50}",
+      }),
       figmaToken({ path: ["space", "07"], type: "number", value: 40 }),
     ],
     light: [
@@ -140,6 +148,18 @@ const cases = [
       });
     },
     error: new RegExp("missing primitive alias target color/brand/missing"),
+  },
+  {
+    name: "primitive references that no longer resolve",
+    edit: (context) => {
+      context.figmaTokens.primitive[2] = figmaToken({
+        path: ["shadow", "focused-4px", "color"],
+        value: "{color.alpha.brand.missing}",
+      });
+    },
+    error: new RegExp(
+      "primitive: unresolved reference \\{color\\.alpha\\.brand\\.missing\\}",
+    ),
   },
   {
     name: "explicit references that no longer resolve",

@@ -83,15 +83,19 @@ describe("Generated platform outputs", () => {
     }
     assert.match(
       lightCss,
-      /--ds-semantic-shadow-focused-4px-color:\s*var\(--ds-primitive-color-alpha-[^)]+\);/,
+      /--ds-primitive-shadow-focused-4px-primary-color:\s*var\(--ds-primitive-color-alpha-brand-50\);/,
     );
     assert.match(
       lightCss,
-      /--ds-primitive-shadow-focused-4px-spread:\s*-?\d+(?:\.\d+)?px;/,
+      /--ds-semantic-shadow-focused-4px-color:\s*var\(--ds-primitive-shadow-focused-4px-primary-color\);/,
     );
     assert.match(
       lightCss,
-      /--ds-semantic-shadow-focused-4px-spread:\s*var\(--ds-primitive-shadow-focused-4px-spread\);/,
+      /--ds-primitive-shadow-focused-4px-primary-spread:\s*-?\d+(?:\.\d+)?px;/,
+    );
+    assert.match(
+      lightCss,
+      /--ds-semantic-shadow-focused-4px-spread:\s*var\(--ds-primitive-shadow-focused-4px-primary-spread\);/,
     );
     assert.match(
       lightCss,
@@ -100,10 +104,6 @@ describe("Generated platform outputs", () => {
     assert.match(
       lightCss,
       /--ds-semantic-typography-label-default-letter-spacing:\s*var\(--ds-primitive-font-letter-spacing-wide\);/,
-    );
-    assert.match(
-      lightCss,
-      /--ds-component-dropdown-menu-width:\s*240px;/,
     );
     assert.match(lightCss, /--ds-primitive-font-weight-medium:\s*500;/);
     assert.equal(

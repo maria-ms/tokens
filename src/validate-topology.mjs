@@ -125,6 +125,62 @@ const validateAliasIdentity = (errors, themeId, tokens) => {
   }
 };
 
+const referencePath = (value) =>
+  isReference(value) ? value.slice(1, -1).replaceAll(".", "/") : undefined;
+
+const withoutPrefix = (path, prefix) =>
+  prefix.length && path.startsWith(prefix.join("/") + "/")
+    ? path.slice(prefix.join("/").length + 1)
+    : path;
+
+const primitivePrefix = (recipe) => recipe.base.prefix ?? [recipe.base.id];
+
+const resolvesReference = (refPath, recipe, primitivePaths, themePaths) =>
+  themePaths.has(refPath) ||
+  primitivePaths.has(refPath) ||
+  primitivePaths.has(withoutPrefix(refPath, primitivePrefix(recipe)));
+
+const validateBaseReferences = (errors, recipe, primitivePaths, tokens) => {
+  validateAliasIdentity(errors, recipe.base.id, tokens);
+
+  for (const token of tokens) {
+    const refPath = referencePath(token.value);
+    const alias = token.alias;
+
+    if (alias && alias.targetVariableSetName !== recipe.base.collection) {
+      errors.push(
+        recipe.base.id +
+          ": unsupported alias collection " +
+          alias.targetVariableSetName +
+          " from " +
+          tokenName(token),
+      );
+    }
+    if (
+      alias?.targetVariableSetName === recipe.base.collection &&
+      !primitivePaths.has(alias.targetVariableName)
+    ) {
+      errors.push(
+        recipe.base.id +
+          ": missing primitive alias target " +
+          alias.targetVariableName,
+      );
+    }
+    if (
+      refPath &&
+      !resolvesReference(refPath, recipe, primitivePaths, new Set())
+    ) {
+      errors.push(
+        recipe.base.id +
+          ": unresolved reference " +
+          token.value +
+          " from " +
+          tokenName(token),
+      );
+    }
+  }
+};
+
 const validateThemeAliases = (
   errors,
   recipe,
@@ -137,9 +193,7 @@ const validateThemeAliases = (
   validateAliasIdentity(errors, themeId, tokens);
 
   for (const token of tokens) {
-    const refPath = isReference(token.value)
-      ? token.value.slice(1, -1).replaceAll(".", "/")
-      : undefined;
+    const refPath = referencePath(token.value);
     const alias = token.alias;
 
     if (
@@ -184,7 +238,8 @@ const validateThemeAliases = (
         themeId + ": missing token alias target " + alias.targetVariableName,
       );
     }
-    if (refPath && !themePaths.has(refPath) && !primitivePaths.has(refPath)) {
+    if (!refPath) continue;
+    if (!resolvesReference(refPath, recipe, primitivePaths, themePaths)) {
       errors.push(
         themeId +
           ": unresolved reference " +
@@ -208,6 +263,7 @@ export const validateTopology = (context) => {
 
   validateModeNames(errors, context);
   validateTokenPaths(errors, context.recipe.base.id, baseTokens);
+  validateBaseReferences(errors, context.recipe, primitivePaths, baseTokens);
   for (const [themeId, tokens] of themeEntries)
     validateTokenPaths(errors, themeId, tokens);
   validateThemeParity(errors, themeEntries);

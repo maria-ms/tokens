@@ -46,8 +46,15 @@ const isPercentageNumber = (token, recipe) =>
 
 const dtcgPath = (parts) =>
   parts.map((part) => (part === "$root" ? "root" : part));
-const dtcgReference = (reference) =>
-  "{" + dtcgPath(reference.slice(1, -1).split(".")).join(".") + "}";
+const dtcgReference = (reference, prefix = []) => {
+  const path = dtcgPath(reference.slice(1, -1).split("."));
+  const prefixed =
+    prefix.length && !prefix.every((part, index) => path[index] === part)
+      ? [...prefix, ...path]
+      : path;
+
+  return "{" + prefixed.join(".") + "}";
+};
 const dtcgReferencePath = (path) => dtcgPath(path.split("/")).join(".");
 
 const aliasReference = (alias, recipe) => {
@@ -126,9 +133,9 @@ const tokenType = (token, recipe) =>
     ? "dimension"
     : token.type;
 
-const tokenValue = (token, recipe, $type) => {
+const tokenValue = (token, recipe, $type, prefix) => {
   if (token.alias) return aliasReference(token.alias, recipe);
-  if (isReference(token.value)) return dtcgReference(token.value);
+  if (isReference(token.value)) return dtcgReference(token.value, prefix);
   if ($type === "color") return colorHex(token.value, tokenName(token));
   if (isPercentageNumber(token, recipe)) {
     return { value: token.value / 100, unit: "em" };
@@ -150,7 +157,7 @@ const figmaExtension = (token) => {
   return Object.keys(value).length ? value : undefined;
 };
 
-const toDtcg = (token, recipe) => {
+const toDtcg = (token, recipe, prefix) => {
   const name = tokenName(token);
   const $type = tokenType(token, recipe);
   const figma = figmaExtension(token);
@@ -161,7 +168,7 @@ const toDtcg = (token, recipe) => {
 
   return {
     $type,
-    $value: tokenValue(token, recipe, $type),
+    $value: tokenValue(token, recipe, $type, prefix),
     ...(token.description ? { $description: token.description } : {}),
     $extensions: {
       ds: { source: recipe.source.type, sourcePath: name },
@@ -189,7 +196,7 @@ const buildTree = (tokens, recipe, prefix = []) => {
     if (!name || cursor[name] !== undefined) {
       throw new Error("Duplicate token path " + parts.join("/"));
     }
-    cursor[name] = toDtcg(token, recipe);
+    cursor[name] = toDtcg(token, recipe, prefix);
   }
 
   return root;

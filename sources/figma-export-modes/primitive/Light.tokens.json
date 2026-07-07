@@ -12787,6 +12787,21 @@
         }
       }
     },
+    "15": {
+      "$type": "number",
+      "$value": 240,
+      "$description": "Spacing step 13 — 160px",
+      "$extensions": {
+        "com.figma.variableId": "VariableID:40021406:38538",
+        "com.figma.scopes": [
+          "WIDTH_HEIGHT",
+          "GAP"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--primitive-space-15)"
+        }
+      }
+    },
     "01": {
       "$type": "number",
       "$value": 2,
@@ -12862,6 +12877,19 @@
         }
       }
     },
+    "06": {
+      "$type": "number",
+      "$value": 20,
+      "$extensions": {
+        "com.figma.variableId": "VariableID:40021371:1084",
+        "com.figma.scopes": [
+          "ALL_SCOPES"
+        ],
+        "com.figma.codeSyntax": {
+          "WEB": "var(--primitive-space-06)"
+        }
+      }
+    },
     "07": {
       "$type": "number",
       "$value": 24,
@@ -12905,16 +12933,6 @@
         "com.figma.codeSyntax": {
           "WEB": "var(--primitive-space-08)"
         }
-      }
-    },
-    "06": {
-      "$type": "number",
-      "$value": 20,
-      "$extensions": {
-        "com.figma.variableId": "VariableID:40021371:1084",
-        "com.figma.scopes": [
-          "ALL_SCOPES"
-        ]
       }
     }
   },
@@ -13932,7 +13950,7 @@
         }
       }
     },
-    "focused-4px": {
+    "focused-4px-primary": {
       "blur": {
         "$type": "number",
         "$value": 0,
@@ -13991,16 +14009,7 @@
       },
       "color": {
         "$type": "color",
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.18000000715255737,
-            0.4399999976158142,
-            0.9599999785423279
-          ],
-          "alpha": 0.23999999463558197,
-          "hex": "#2E70F5"
-        },
+        "$value": "{color.alpha.brand.50}",
         "$description": "Focus ring shadow colour – primary",
         "$extensions": {
           "com.figma.variableId": "VariableID:40020989:6",
@@ -14009,6 +14018,78 @@
           ],
           "com.figma.codeSyntax": {
             "WEB": "var(--primitive-shadow-focused-4px-color)"
+          }
+        }
+      }
+    },
+    "focused-4px-secondary": {
+      "blur": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Primitive shadow focused-4px — blur radius. Value in px.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:40021465:32262",
+          "com.figma.scopes": [
+            "EFFECT_FLOAT"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--primitive-shadow-focused-4px-blur)"
+          }
+        }
+      },
+      "spread": {
+        "$type": "number",
+        "$value": 4,
+        "$description": "Primitive shadow focused-4px — spread. Value in px.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:40021465:32263",
+          "com.figma.scopes": [
+            "EFFECT_FLOAT"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--primitive-shadow-focused-4px-spread)"
+          }
+        }
+      },
+      "offset-x": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Primitive shadow focused-4px — horizontal offset. Value in px.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:40021465:32264",
+          "com.figma.scopes": [
+            "EFFECT_FLOAT"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--primitive-shadow-focused-4px-offset-x)"
+          }
+        }
+      },
+      "offset-y": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Primitive shadow focused-4px — vertical offset. Value in px.",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:40021465:32265",
+          "com.figma.scopes": [
+            "EFFECT_FLOAT"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--primitive-shadow-focused-4px-offset-y)"
+          }
+        }
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.alpha.slate.300}",
+        "$description": "Focus ring shadow colour – secondary",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:40021465:32266",
+          "com.figma.scopes": [
+            "EFFECT_COLOR"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--primitive-shadow-focused-4px-secondary-color)"
           }
         }
       }
@@ -14072,16 +14153,7 @@
       },
       "color": {
         "$type": "color",
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            0.8500000238418579,
-            0.10999999940395355,
-            0.10999999940395355
-          ],
-          "alpha": 0.23999999463558197,
-          "hex": "#D91C1C"
-        },
+        "$value": "{color.alpha.red.400}",
         "$description": "Focus ring shadow colour – destructive",
         "$extensions": {
           "com.figma.variableId": "VariableID:40020989:7",
