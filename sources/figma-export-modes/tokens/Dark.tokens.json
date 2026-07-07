@@ -4297,11 +4297,15 @@
             "alpha": 0.30000001192092896,
             "hex": "#CBD5E1"
           },
+          "$description": "Focused 4px secondary shadow color",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021474:15",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "EFFECT_COLOR"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--semantic-shadow-focused-4px-secondary-color)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:2f4af5ab6da0b74883b8a483a0593adba9eadb3c/-1:-1",
               "targetVariableName": "shadow/focused-4px-secondary/color",
@@ -4313,11 +4317,15 @@
         "blur": {
           "$type": "number",
           "$value": 0,
+          "$description": "Focused 4px secondary shadow blur radius",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021474:16",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "EFFECT_FLOAT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--semantic-shadow-focused-4px-secondary-blur)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:89d572c9b78f41c1a74ad9e847426d33c5de9f1f/-1:-1",
               "targetVariableName": "shadow/focused-4px-secondary/blur",
@@ -4329,11 +4337,15 @@
         "spread": {
           "$type": "number",
           "$value": 4,
+          "$description": "Focused 4px secondary shadow spread radius",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021474:17",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "EFFECT_FLOAT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--semantic-shadow-focused-4px-secondary-spread)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:f9b5e113d5e6985c7713f6f0c2634c372bd1ded0/-1:-1",
               "targetVariableName": "shadow/focused-4px-secondary/spread",
@@ -4345,11 +4357,15 @@
         "offset-x": {
           "$type": "number",
           "$value": 0,
+          "$description": "Focused 4px secondary shadow horizontal offset",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021474:18",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "EFFECT_FLOAT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--semantic-shadow-focused-4px-secondary-offset-x)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:69c6e988f53743afe774a4f8403cded22ef29abb/-1:-1",
               "targetVariableName": "shadow/focused-4px-secondary/offset-x",
@@ -4361,11 +4377,15 @@
         "offset-y": {
           "$type": "number",
           "$value": 0,
+          "$description": "Focused 4px secondary shadow vertical offset",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021474:19",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "EFFECT_FLOAT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--semantic-shadow-focused-4px-secondary-offset-y)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:f67268efc2aea639c179ceea297a9f1dc382e3fe/-1:-1",
               "targetVariableName": "shadow/focused-4px-secondary/offset-y",
@@ -4382,11 +4402,15 @@
           "font-size": {
             "$type": "number",
             "$value": 14,
+            "$description": "Font size for body small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:15",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-small-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:5c3b40b95ed10c4c257fcf148df210ad78c3023b/-1:-1",
                 "targetVariableName": "font/size/small",
@@ -4398,11 +4422,15 @@
           "line-height": {
             "$type": "number",
             "$value": 20,
+            "$description": "Line height for body small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:16",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-small-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:8ffe7aaaab5b003212ce3404a8a71fe2fce38b4d/-1:-1",
                 "targetVariableName": "font/line-height/small",
@@ -4414,11 +4442,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 2,
+            "$description": "Letter spacing for body small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2073",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-small-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:c6feec5c4ca90bc3a0e2f17b91f76589c4fa8a77/-1:-1",
                 "targetVariableName": "font/letter-spacing/tight",
@@ -4431,11 +4463,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for body small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:290",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-small-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -4447,11 +4483,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for body small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:291",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-small-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -4463,11 +4503,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for body small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24734",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-small-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -4479,11 +4523,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for body small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24735",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-small-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -4495,11 +4543,15 @@
             "$root": {
               "$type": "number",
               "$value": 400,
+              "$description": "Default font weight for body small text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021194:17",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-small-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:2a88e052128521d42101fcb8fbf573971370200a/-1:-1",
                   "targetVariableName": "font/weight/regular",
@@ -4514,11 +4566,15 @@
           "font-size": {
             "$type": "number",
             "$value": 12,
+            "$description": "Font size for body x-small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:18",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-x-small-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:4fc8e1489d549d17d3827dca20a519dae5820f0b/-1:-1",
                 "targetVariableName": "font/size/x-small",
@@ -4530,11 +4586,15 @@
           "line-height": {
             "$type": "number",
             "$value": 16,
+            "$description": "Line height for body x-small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:19",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-x-small-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:3fe4c5432a38974d03a233824268a8c2566a5d17/-1:-1",
                 "targetVariableName": "font/line-height/x-small",
@@ -4546,11 +4606,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 4,
+            "$description": "Letter spacing for body x-small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2074",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-x-small-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:b7c20ce74bda83de2c1ecc735aa20e66e5359a80/-1:-1",
                 "targetVariableName": "font/letter-spacing/wide",
@@ -4563,11 +4627,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for body x-small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:292",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-x-small-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -4579,11 +4647,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for body x-small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:293",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-x-small-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -4595,11 +4667,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for body x-small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24736",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-x-small-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -4611,11 +4687,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for body x-small",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24737",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-x-small-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -4627,11 +4707,15 @@
             "$root": {
               "$type": "number",
               "$value": 400,
+              "$description": "Default font weight for body x-small text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021194:20",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-x-small-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:2a88e052128521d42101fcb8fbf573971370200a/-1:-1",
                   "targetVariableName": "font/weight/regular",
@@ -4646,11 +4730,15 @@
           "font-size": {
             "$type": "number",
             "$value": 24,
+            "$description": "Font size for body large text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:292",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-large-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:d54e7c1a7ce04dc14e1655c249d02412251f52cc/-1:-1",
                 "targetVariableName": "font/size/large",
@@ -4662,11 +4750,15 @@
           "line-height": {
             "$type": "number",
             "$value": 32,
+            "$description": "Line height for body large text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:293",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-large-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:402e88263890fee8f3a07df60e5fe6989e390221/-1:-1",
                 "targetVariableName": "font/line-height/large",
@@ -4678,11 +4770,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 2,
+            "$description": "Letter spacing for body large text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2071",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-large-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:c6feec5c4ca90bc3a0e2f17b91f76589c4fa8a77/-1:-1",
                 "targetVariableName": "font/letter-spacing/tight",
@@ -4695,11 +4791,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for body large",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:286",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-large-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -4711,11 +4811,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for body large",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:287",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-large-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -4727,11 +4831,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for body large",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24730",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-large-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -4743,11 +4851,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for body large",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24731",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-large-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -4759,11 +4871,15 @@
             "$root": {
               "$type": "number",
               "$value": 400,
+              "$description": "Default font weight for body large text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:294",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-large-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:2a88e052128521d42101fcb8fbf573971370200a/-1:-1",
                   "targetVariableName": "font/weight/regular",
@@ -4778,11 +4894,15 @@
           "font-size": {
             "$type": "number",
             "$value": 16,
+            "$description": "Font size for body base text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:295",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-base-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:83e744c385d62cda17b5bedaedf5697d8ae4ff24/-1:-1",
                 "targetVariableName": "font/size/base",
@@ -4794,11 +4914,15 @@
           "line-height": {
             "$type": "number",
             "$value": 24,
+            "$description": "Line height for body base text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:296",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-base-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:8cfbd9c71eaa81545dd50340f5fca5e6ca13787c/-1:-1",
                 "targetVariableName": "font/line-height/base",
@@ -4810,11 +4934,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 2,
+            "$description": "Letter spacing for body base text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2072",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-body-base-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:c6feec5c4ca90bc3a0e2f17b91f76589c4fa8a77/-1:-1",
                 "targetVariableName": "font/letter-spacing/tight",
@@ -4827,11 +4955,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for body base",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:288",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-base-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -4843,11 +4975,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for body base",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:289",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-base-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -4859,11 +4995,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for body base",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24732",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-base-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -4875,11 +5015,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for body base",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24733",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-base-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -4891,11 +5035,15 @@
             "$root": {
               "$type": "number",
               "$value": 400,
+              "$description": "Default font weight for body base text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:297",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-body-base-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:2a88e052128521d42101fcb8fbf573971370200a/-1:-1",
                   "targetVariableName": "font/weight/regular",
@@ -4912,11 +5060,15 @@
           "font-size": {
             "$type": "number",
             "$value": 14,
+            "$description": "Font size for label text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:21",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-label-default-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:5c3b40b95ed10c4c257fcf148df210ad78c3023b/-1:-1",
                 "targetVariableName": "font/size/small",
@@ -4928,11 +5080,15 @@
           "line-height": {
             "$type": "number",
             "$value": 20,
+            "$description": "Line height for label text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:22",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-label-default-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:8ffe7aaaab5b003212ce3404a8a71fe2fce38b4d/-1:-1",
                 "targetVariableName": "font/line-height/small",
@@ -4944,11 +5100,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 4,
+            "$description": "Letter spacing for label text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2075",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-label-default-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:b7c20ce74bda83de2c1ecc735aa20e66e5359a80/-1:-1",
                 "targetVariableName": "font/letter-spacing/wide",
@@ -4961,11 +5121,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for label",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:294",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-label-default-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -4977,11 +5141,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for label",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:295",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-label-default-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -4993,11 +5161,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for label",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24738",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-label-default-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5009,11 +5181,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for label",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24739",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-label-default-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -5025,11 +5201,15 @@
             "$root": {
               "$type": "number",
               "$value": 500,
+              "$description": "Default font weight for label text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021194:23",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-label-default-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -5046,11 +5226,15 @@
           "font-size": {
             "$type": "number",
             "$value": 14,
+            "$description": "Font size for control text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:24",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-control-default-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:5c3b40b95ed10c4c257fcf148df210ad78c3023b/-1:-1",
                 "targetVariableName": "font/size/small",
@@ -5062,11 +5246,15 @@
           "line-height": {
             "$type": "number",
             "$value": 20,
+            "$description": "Line height for control text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:25",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-control-default-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:8ffe7aaaab5b003212ce3404a8a71fe2fce38b4d/-1:-1",
                 "targetVariableName": "font/line-height/small",
@@ -5078,11 +5266,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 4,
+            "$description": "Letter spacing for control text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2076",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-control-default-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:b7c20ce74bda83de2c1ecc735aa20e66e5359a80/-1:-1",
                 "targetVariableName": "font/letter-spacing/wide",
@@ -5095,11 +5287,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for control",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:296",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-control-default-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5111,11 +5307,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for control",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:297",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-control-default-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5127,11 +5327,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for control",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24740",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-control-default-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5143,11 +5347,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for control",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24741",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-control-default-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -5159,11 +5367,15 @@
             "$root": {
               "$type": "number",
               "$value": 500,
+              "$description": "Default font weight for control text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021194:26",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-control-default-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -5180,11 +5392,15 @@
           "font-size": {
             "$type": "number",
             "$value": 12,
+            "$description": "Font size for supporting text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:27",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-supporting-default-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:4fc8e1489d549d17d3827dca20a519dae5820f0b/-1:-1",
                 "targetVariableName": "font/size/x-small",
@@ -5196,11 +5412,15 @@
           "line-height": {
             "$type": "number",
             "$value": 16,
+            "$description": "Line height for supporting text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021194:28",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-supporting-default-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:3fe4c5432a38974d03a233824268a8c2566a5d17/-1:-1",
                 "targetVariableName": "font/line-height/x-small",
@@ -5212,11 +5432,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 4,
+            "$description": "Letter spacing for supporting text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2077",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-supporting-default-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:b7c20ce74bda83de2c1ecc735aa20e66e5359a80/-1:-1",
                 "targetVariableName": "font/letter-spacing/wide",
@@ -5229,11 +5453,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for supporting",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:298",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-supporting-default-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5245,11 +5473,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for supporting",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:299",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-supporting-default-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5261,11 +5493,15 @@
             "bold": {
               "$type": "number",
               "$value": 700,
+              "$description": "Bold weight for supporting",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24742",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-supporting-default-font-weight-bold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5277,11 +5513,15 @@
             "medium": {
               "$type": "number",
               "$value": 500,
+              "$description": "Medium weight for supporting",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021204:24743",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-supporting-default-font-weight-medium)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:6aaeaff3ac69db89cdcee51a7101c7dc979d09c7/-1:-1",
                   "targetVariableName": "font/weight/medium",
@@ -5293,11 +5533,15 @@
             "$root": {
               "$type": "number",
               "$value": 400,
+              "$description": "Default font weight for supporting text",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021194:29",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-supporting-default-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:2a88e052128521d42101fcb8fbf573971370200a/-1:-1",
                   "targetVariableName": "font/weight/regular",
@@ -5314,11 +5558,15 @@
           "font-size": {
             "$type": "number",
             "$value": 72,
+            "$description": "Font size for heading 1",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:274",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-1-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:71bc9ee17a9c8ff4cb9ab0645a9d616bf5982390/-1:-1",
                 "targetVariableName": "font/size/5x-large",
@@ -5330,11 +5578,15 @@
           "line-height": {
             "$type": "number",
             "$value": 86,
+            "$description": "Line height for heading 1",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:275",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-1-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:e8ac552674c386108f36cee5148cbb2f82371eb5/-1:-1",
                 "targetVariableName": "font/line-height/5x-large",
@@ -5346,11 +5598,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 0,
+            "$description": "Letter spacing for heading 1",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2065",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-1-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:97cbd513a6cf1a58eac604522317a6aca045432c/-1:-1",
                 "targetVariableName": "font/letter-spacing/none",
@@ -5363,11 +5619,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for heading 1",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:274",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-1-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5379,11 +5639,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for heading 1",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:275",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-1-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5395,11 +5659,15 @@
             "$root": {
               "$type": "number",
               "$value": 700,
+              "$description": "Default font weight for heading 1",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:276",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-1-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5414,11 +5682,15 @@
           "font-size": {
             "$type": "number",
             "$value": 56,
+            "$description": "Font size for heading 2",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:277",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-2-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:640a84d052baf2f7b8014c51055549e8057c92d5/-1:-1",
                 "targetVariableName": "font/size/4x-large",
@@ -5430,11 +5702,15 @@
           "line-height": {
             "$type": "number",
             "$value": 64,
+            "$description": "Line height for heading 2",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:278",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-2-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:6c95efcd2afef8fc0791e016568465d892bc1642/-1:-1",
                 "targetVariableName": "font/line-height/4x-large",
@@ -5446,11 +5722,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 0,
+            "$description": "Letter spacing for heading 2",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2066",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-2-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:97cbd513a6cf1a58eac604522317a6aca045432c/-1:-1",
                 "targetVariableName": "font/letter-spacing/none",
@@ -5463,11 +5743,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for heading 2",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:276",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-2-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5479,11 +5763,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for heading 2",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:277",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-2-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5495,11 +5783,15 @@
             "$root": {
               "$type": "number",
               "$value": 700,
+              "$description": "Default font weight for heading 2",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:279",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-2-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5514,11 +5806,15 @@
           "font-size": {
             "$type": "number",
             "$value": 48,
+            "$description": "Font size for heading 3",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:280",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-3-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:9ea7536f5c5a5bfc1b723ab96b8bb6dee4311fc7/-1:-1",
                 "targetVariableName": "font/size/3x-large",
@@ -5530,11 +5826,15 @@
           "line-height": {
             "$type": "number",
             "$value": 56,
+            "$description": "Line height for heading 3",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:281",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-3-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:e505625f9efaa05eaa61d08433d8240efeb5354a/-1:-1",
                 "targetVariableName": "font/line-height/3x-large",
@@ -5546,11 +5846,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 0,
+            "$description": "Letter spacing for heading 3",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2067",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-3-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:97cbd513a6cf1a58eac604522317a6aca045432c/-1:-1",
                 "targetVariableName": "font/letter-spacing/none",
@@ -5563,11 +5867,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for heading 3",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:278",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-3-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5579,11 +5887,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for heading 3",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:279",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-3-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5595,11 +5907,15 @@
             "$root": {
               "$type": "number",
               "$value": 700,
+              "$description": "Default font weight for heading 3",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:282",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-3-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5614,11 +5930,15 @@
           "font-size": {
             "$type": "number",
             "$value": 40,
+            "$description": "Font size for heading 4",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:283",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-4-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:0f275207678b55234d0ac3beb15aeec9b7a94d84/-1:-1",
                 "targetVariableName": "font/size/2x-large",
@@ -5630,11 +5950,15 @@
           "line-height": {
             "$type": "number",
             "$value": 48,
+            "$description": "Line height for heading 4",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:284",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-4-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:2db6028c553c9e40cae5727d52fe160d4d931eba/-1:-1",
                 "targetVariableName": "font/line-height/2x-large",
@@ -5646,11 +5970,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 0,
+            "$description": "Letter spacing for heading 4",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2068",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-4-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:97cbd513a6cf1a58eac604522317a6aca045432c/-1:-1",
                 "targetVariableName": "font/letter-spacing/none",
@@ -5663,11 +5991,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for heading 4",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:280",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-4-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5679,11 +6011,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for heading 4",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:281",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-4-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5695,11 +6031,15 @@
             "$root": {
               "$type": "number",
               "$value": 700,
+              "$description": "Default font weight for heading 4",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:285",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-4-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5714,11 +6054,15 @@
           "font-size": {
             "$type": "number",
             "$value": 32,
+            "$description": "Font size for heading 5",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:286",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-5-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:91c73d42b4cf21a0d37cffd6a8868221ad0775b5/-1:-1",
                 "targetVariableName": "font/size/extra-large",
@@ -5730,11 +6074,15 @@
           "line-height": {
             "$type": "number",
             "$value": 40,
+            "$description": "Line height for heading 5",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:287",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-5-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:ee85316219f7b90cb3c2c969c4302f1c31555c12/-1:-1",
                 "targetVariableName": "font/line-height/extra-large",
@@ -5746,11 +6094,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 0,
+            "$description": "Letter spacing for heading 5",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2069",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-5-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:97cbd513a6cf1a58eac604522317a6aca045432c/-1:-1",
                 "targetVariableName": "font/letter-spacing/none",
@@ -5763,11 +6115,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for heading 5",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:282",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-5-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5779,11 +6135,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for heading 5",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:283",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-5-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5795,11 +6155,15 @@
             "$root": {
               "$type": "number",
               "$value": 700,
+              "$description": "Default font weight for heading 5",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:288",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-5-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5814,11 +6178,15 @@
           "font-size": {
             "$type": "number",
             "$value": 24,
+            "$description": "Font size for heading 6",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:289",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "FONT_SIZE"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-6-font-size)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:d54e7c1a7ce04dc14e1655c249d02412251f52cc/-1:-1",
                 "targetVariableName": "font/size/large",
@@ -5830,11 +6198,15 @@
           "line-height": {
             "$type": "number",
             "$value": 32,
+            "$description": "Line height for heading 6",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021197:290",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LINE_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-6-line-height)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:402e88263890fee8f3a07df60e5fe6989e390221/-1:-1",
                 "targetVariableName": "font/line-height/large",
@@ -5846,11 +6218,15 @@
           "letter-spacing": {
             "$type": "number",
             "$value": 2,
+            "$description": "Letter spacing for heading 6",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2070",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "LETTER_SPACING"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--semantic-typography-heading-6-letter-spacing)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:c6feec5c4ca90bc3a0e2f17b91f76589c4fa8a77/-1:-1",
                 "targetVariableName": "font/letter-spacing/tight",
@@ -5863,11 +6239,15 @@
             "semibold": {
               "$type": "number",
               "$value": 600,
+              "$description": "Semibold weight for heading 6",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:284",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-6-font-weight-semibold)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:54367635d4296d9a159d8d12ee54a749a2c816c8/-1:-1",
                   "targetVariableName": "font/weight/semibold",
@@ -5879,11 +6259,15 @@
             "light": {
               "$type": "number",
               "$value": 300,
+              "$description": "Light weight for heading 6",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021202:285",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-6-font-weight-light)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:5047fc7f70f95c448f8db31969a4cf1a8c44b5aa/-1:-1",
                   "targetVariableName": "font/weight/light",
@@ -5895,11 +6279,15 @@
             "$root": {
               "$type": "number",
               "$value": 700,
+              "$description": "Default font weight for heading 6",
               "$extensions": {
                 "com.figma.variableId": "VariableID:40021197:291",
                 "com.figma.scopes": [
-                  "ALL_SCOPES"
+                  "FONT_STYLE"
                 ],
+                "com.figma.codeSyntax": {
+                  "WEB": "var(--semantic-typography-heading-6-font-weight)"
+                },
                 "com.figma.aliasData": {
                   "targetVariableId": "VariableID:98dd6fa29c62607784a38b48a2b876d767827ab9/-1:-1",
                   "targetVariableName": "font/weight/bold",
@@ -5919,11 +6307,15 @@
         "xs": {
           "$type": "number",
           "$value": 16,
+          "$description": "Avatar container size — xs",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:1562",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-avatar-size-xs)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:0c855c75afc6002ff28afe4eadbb1528d9df5b0d/-1:-1",
               "targetVariableName": "space/05",
@@ -5935,11 +6327,15 @@
         "sm": {
           "$type": "number",
           "$value": 24,
+          "$description": "Avatar container size — sm",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:1563",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-avatar-size-sm)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
               "targetVariableName": "space/07",
@@ -5951,11 +6347,15 @@
         "md": {
           "$type": "number",
           "$value": 32,
+          "$description": "Avatar container size — md",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:1564",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-avatar-size-md)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:121ac042339fa03b06ed291b302273fadd4159de/-1:-1",
               "targetVariableName": "space/08",
@@ -5967,11 +6367,15 @@
         "lg": {
           "$type": "number",
           "$value": 40,
+          "$description": "Avatar container size — lg",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:1565",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-avatar-size-lg)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
               "targetVariableName": "space/09",
@@ -5986,11 +6390,15 @@
           "xs": {
             "$type": "number",
             "$value": 4,
+            "$description": "Avatar status indicator size — xs",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1568",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-status-size-xs)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:37cb50c58bcb5040276e15add14a56e0404376ac/-1:-1",
                 "targetVariableName": "space/02",
@@ -6002,11 +6410,15 @@
           "sm": {
             "$type": "number",
             "$value": 8,
+            "$description": "Avatar status indicator size — sm",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1569",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-status-size-sm)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:9778b0497661ae018b2409e485621768e040c1dd/-1:-1",
                 "targetVariableName": "space/03",
@@ -6018,11 +6430,15 @@
           "md": {
             "$type": "number",
             "$value": 12,
+            "$description": "Avatar status indicator size — md",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1570",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-status-size-md)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:013d6daf8158b0cd3c8947935a8b1f46a06637d1/-1:-1",
                 "targetVariableName": "space/04",
@@ -6034,11 +6450,15 @@
           "lg": {
             "$type": "number",
             "$value": 16,
+            "$description": "Avatar status indicator size — lg",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1571",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-status-size-lg)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:0c855c75afc6002ff28afe4eadbb1528d9df5b0d/-1:-1",
                 "targetVariableName": "space/05",
@@ -6054,11 +6474,15 @@
           "xs": {
             "$type": "number",
             "$value": 8,
+            "$description": "Avatar company badge size — xs",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1574",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-company-badge-size-xs)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:9778b0497661ae018b2409e485621768e040c1dd/-1:-1",
                 "targetVariableName": "space/03",
@@ -6070,11 +6494,15 @@
           "sm": {
             "$type": "number",
             "$value": 12,
+            "$description": "Avatar company badge size — sm",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1575",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-company-badge-size-sm)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:013d6daf8158b0cd3c8947935a8b1f46a06637d1/-1:-1",
                 "targetVariableName": "space/04",
@@ -6086,11 +6514,15 @@
           "md": {
             "$type": "number",
             "$value": 16,
+            "$description": "Avatar company badge size — md",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1576",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-company-badge-size-md)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:0c855c75afc6002ff28afe4eadbb1528d9df5b0d/-1:-1",
                 "targetVariableName": "space/05",
@@ -6102,11 +6534,15 @@
           "lg": {
             "$type": "number",
             "$value": 24,
+            "$description": "Avatar company badge size — lg",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021356:1577",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-avatar-company-badge-size-lg)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
                 "targetVariableName": "space/07",
@@ -6885,11 +7321,15 @@
         "sm": {
           "$type": "number",
           "$value": 32,
+          "$description": "Button height — sm",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:3122",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-button-height-sm)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:121ac042339fa03b06ed291b302273fadd4159de/-1:-1",
               "targetVariableName": "space/08",
@@ -6901,11 +7341,15 @@
         "md": {
           "$type": "number",
           "$value": 40,
+          "$description": "Button height — md",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:3123",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-button-height-md)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
               "targetVariableName": "space/09",
@@ -6917,11 +7361,15 @@
         "lg": {
           "$type": "number",
           "$value": 48,
+          "$description": "Button height — lg",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021356:3124",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-button-height-lg)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
               "targetVariableName": "space/10",
@@ -6933,11 +7381,15 @@
         "xs": {
           "$type": "number",
           "$value": 24,
+          "$description": "Button height — xs",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021358:1084",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-button-height-xs)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
               "targetVariableName": "space/07",
@@ -6952,11 +7404,15 @@
           "xs": {
             "$type": "number",
             "$value": 24,
+            "$description": "Icon-only button size — xs",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021358:1085",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-button-icon-only-size-xs)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
                 "targetVariableName": "space/07",
@@ -6968,11 +7424,15 @@
           "sm": {
             "$type": "number",
             "$value": 32,
+            "$description": "Icon-only button size — sm",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021358:1086",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-button-icon-only-size-sm)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:121ac042339fa03b06ed291b302273fadd4159de/-1:-1",
                 "targetVariableName": "space/08",
@@ -6984,11 +7444,15 @@
           "md": {
             "$type": "number",
             "$value": 40,
+            "$description": "Icon-only button size — md",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021358:1087",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-button-icon-only-size-md)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
                 "targetVariableName": "space/09",
@@ -7000,11 +7464,15 @@
           "lg": {
             "$type": "number",
             "$value": 48,
+            "$description": "Icon-only button size — lg",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021358:1088",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-button-icon-only-size-lg)"
+              },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
                 "targetVariableName": "space/10",
@@ -7447,11 +7915,15 @@
         "sm": {
           "$type": "number",
           "$value": 16,
+          "$description": "Icon size — sm (16px)",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021468:12108",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-icon-size-sm)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:0c855c75afc6002ff28afe4eadbb1528d9df5b0d/-1:-1",
               "targetVariableName": "space/05",
@@ -7463,11 +7935,15 @@
         "md": {
           "$type": "number",
           "$value": 20,
+          "$description": "Icon size — md (20px)",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021468:12109",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-icon-size-md)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:1cf6a6bf36e5f7fe9644399442dea2356b5ce926/-1:-1",
               "targetVariableName": "space/06",
@@ -7479,11 +7955,15 @@
         "lg": {
           "$type": "number",
           "$value": 24,
+          "$description": "Icon size — lg (24px)",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021468:12110",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-icon-size-lg)"
+            },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
               "targetVariableName": "space/07",
@@ -7578,10 +8058,11 @@
         "sm": {
           "$type": "number",
           "$value": 24,
+          "$description": "Input field height — small",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021355:1562",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--component-input-height-sm)"
@@ -7597,10 +8078,11 @@
         "md": {
           "$type": "number",
           "$value": 32,
+          "$description": "Input field height — medium",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021406:38537",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--component-input-height-md)"
@@ -7616,10 +8098,11 @@
         "lg": {
           "$type": "number",
           "$value": 40,
+          "$description": "Input field height — large",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021406:39204",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--component-input-height-lg)"
@@ -7637,13 +8120,14 @@
         "xs": {
           "$type": "number",
           "$value": 80,
+          "$description": "Input field width — extra-small",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021465:46411",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
-              "WEB": "var(--component-input-width-sm)"
+              "WEB": "var(--component-input-width-xs)"
             },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:a32ed801e3485ffaa7db9b0db5f439a7bdf76581/-1:-1",
@@ -7656,13 +8140,14 @@
         "sm": {
           "$type": "number",
           "$value": 96,
+          "$description": "Input field width — small",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021423:12108",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
-              "WEB": "var(--component-input-width-md)"
+              "WEB": "var(--component-input-width-sm)"
             },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:236451c2c907cabae835780d24214b46e3dea10e/-1:-1",
@@ -7675,13 +8160,14 @@
         "md": {
           "$type": "number",
           "$value": 160,
+          "$description": "Input field width — medium",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021423:12109",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
-              "WEB": "var(--component-input-width-sm)"
+              "WEB": "var(--component-input-width-md)"
             },
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:00115d21e40e16f123854a55814773db0dc2852a/-1:-1",
@@ -7694,10 +8180,11 @@
         "lg": {
           "$type": "number",
           "$value": 240,
+          "$description": "Input field width — large",
           "$extensions": {
             "com.figma.variableId": "VariableID:40021406:39296",
             "com.figma.scopes": [
-              "ALL_SCOPES"
+              "WIDTH_HEIGHT"
             ],
             "com.figma.codeSyntax": {
               "WEB": "var(--component-input-width-lg)"
@@ -7716,13 +8203,14 @@
           "sm": {
             "$type": "number",
             "$value": 64,
+            "$description": "Inline label width for small input variant",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021465:52275",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
               "com.figma.codeSyntax": {
-                "WEB": "var(--component-input-label-width-md)"
+                "WEB": "var(--component-input-label-width-sm)"
               },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:938204482c0f19ca50d052498283a1fdc4c3c405/-1:-1",
@@ -7735,10 +8223,11 @@
           "md": {
             "$type": "number",
             "$value": 80,
+            "$description": "Inline label width for medium input variant",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021406:39295",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
               "com.figma.codeSyntax": {
                 "WEB": "var(--component-input-label-width-md)"
@@ -7754,13 +8243,14 @@
           "lg": {
             "$type": "number",
             "$value": 96,
+            "$description": "Inline label width for large input variant",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021465:52276",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
               "com.figma.codeSyntax": {
-                "WEB": "var(--component-input-label-width-md)"
+                "WEB": "var(--component-input-label-width-lg)"
               },
               "com.figma.aliasData": {
                 "targetVariableId": "VariableID:236451c2c907cabae835780d24214b46e3dea10e/-1:-1",
@@ -7779,10 +8269,11 @@
           "sm": {
             "$type": "number",
             "$value": 24,
+            "$description": "OTP input cell size — small",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021406:106085",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
               "com.figma.codeSyntax": {
                 "WEB": "var(--component-input-otp-cell-size-sm)"
@@ -7798,10 +8289,11 @@
           "md": {
             "$type": "number",
             "$value": 32,
+            "$description": "OTP input cell size — medium",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021406:106086",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
               "com.figma.codeSyntax": {
                 "WEB": "var(--component-input-otp-cell-size-md)"
@@ -7817,10 +8309,11 @@
           "lg": {
             "$type": "number",
             "$value": 40,
+            "$description": "OTP input cell size — large",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021352:1086",
               "com.figma.scopes": [
-                "ALL_SCOPES"
+                "WIDTH_HEIGHT"
               ],
               "com.figma.codeSyntax": {
                 "WEB": "var(--component-input-otp-cell-size-lg)"
@@ -7831,6 +8324,70 @@
                 "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
                 "targetVariableSetName": "primitive"
               }
+            }
+          }
+        }
+      }
+    },
+    "dropdown-menu": {
+      "width": {
+        "sm": {
+          "$type": "number",
+          "$value": 96,
+          "$description": "Dropdown menu min-width — sm",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021482:2774",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-dropdown-menu-width-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:236451c2c907cabae835780d24214b46e3dea10e/-1:-1",
+              "targetVariableName": "space/13",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "md": {
+          "$type": "number",
+          "$value": 160,
+          "$description": "Dropdown menu min-width — md",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021482:2775",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-dropdown-menu-width-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:00115d21e40e16f123854a55814773db0dc2852a/-1:-1",
+              "targetVariableName": "space/14",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 240,
+          "$description": "Dropdown menu min-width — lg",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021482:2776",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-dropdown-menu-width-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a95642358d3c9750a606687b781ae2b3116d2448/-1:-1",
+              "targetVariableName": "space/15",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
             }
           }
         }
