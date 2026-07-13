@@ -1,66 +1,126 @@
 {
   "component": {
-    "table": {
-      "header": {
-        "height": {
-          "sm": {
-            "$type": "number",
-            "$value": 40,
-            "$description": "Height of the table header ",
-            "$extensions": {
-              "com.figma.variableId": "VariableID:40021536:7149",
-              "com.figma.scopes": [
-                "WIDTH_HEIGHT"
-              ],
-              "com.figma.codeSyntax": {
-                "WEB": "var(--component-table-header-height-sm)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
-                "targetVariableName": "space/09",
-                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-                "targetVariableSetName": "primitive"
-              }
+    "switch": {
+      "width": {
+        "sm": {
+          "$type": "number",
+          "$value": 24,
+          "$description": "Switch width size — sm (24px)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021529:8213",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-switch-width-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
+              "targetVariableName": "space/07",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
             }
-          },
-          "md": {
-            "$type": "number",
-            "$value": 48,
-            "$description": "Height of the table header ",
-            "$extensions": {
-              "com.figma.variableId": "VariableID:40021536:7150",
-              "com.figma.scopes": [
-                "WIDTH_HEIGHT"
-              ],
-              "com.figma.codeSyntax": {
-                "WEB": "var(--component-table-header-height-md)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
-                "targetVariableName": "space/10",
-                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-                "targetVariableSetName": "primitive"
-              }
+          }
+        },
+        "md": {
+          "$type": "number",
+          "$value": 32,
+          "$description": "Width of the medium switch track (32px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021529:8214",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-switch-width-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:121ac042339fa03b06ed291b302273fadd4159de/-1:-1",
+              "targetVariableName": "space/08",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
             }
-          },
-          "lg": {
-            "$type": "number",
-            "$value": 48,
-            "$description": "Height of the table header ",
-            "$extensions": {
-              "com.figma.variableId": "VariableID:40021536:7151",
-              "com.figma.scopes": [
-                "WIDTH_HEIGHT"
-              ],
-              "com.figma.codeSyntax": {
-                "WEB": "var(--component-table-header-height-lg)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
-                "targetVariableName": "space/10",
-                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-                "targetVariableSetName": "primitive"
-              }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 40,
+          "$description": "Width of the large switch track (40px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021529:8215",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-switch-width-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
+              "targetVariableName": "space/09",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        }
+      },
+      "height": {
+        "sm": {
+          "$type": "number",
+          "$value": 16,
+          "$description": "Height of the small switch track (16px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021529:8219",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-switch-height-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:0c855c75afc6002ff28afe4eadbb1528d9df5b0d/-1:-1",
+              "targetVariableName": "space/05",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "md": {
+          "$type": "number",
+          "$value": 20,
+          "$description": "Height of the medium switch track (20px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021529:8220",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-switch-height-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1cf6a6bf36e5f7fe9644399442dea2356b5ce926/-1:-1",
+              "targetVariableName": "space/06",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 24,
+          "$description": "Height of the large switch track (24px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021529:8221",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-switch-height-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
+              "targetVariableName": "space/07",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
             }
           }
         }
@@ -192,127 +252,67 @@
         }
       }
     },
-    "switch": {
-      "width": {
-        "sm": {
-          "$type": "number",
-          "$value": 24,
-          "$description": "Switch width size — sm (24px)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021529:8213",
-            "com.figma.scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "com.figma.codeSyntax": {
-              "WEB": "var(--component-switch-width-sm)"
-            },
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
-              "targetVariableName": "space/07",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
+    "table": {
+      "header": {
+        "height": {
+          "sm": {
+            "$type": "number",
+            "$value": 40,
+            "$description": "Height of the table header ",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40021536:7149",
+              "com.figma.scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-table-header-height-sm)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
+                "targetVariableName": "space/09",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
             }
-          }
-        },
-        "md": {
-          "$type": "number",
-          "$value": 32,
-          "$description": "Width of the medium switch track (32px).",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021529:8214",
-            "com.figma.scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "com.figma.codeSyntax": {
-              "WEB": "var(--component-switch-width-md)"
-            },
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:121ac042339fa03b06ed291b302273fadd4159de/-1:-1",
-              "targetVariableName": "space/08",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
+          },
+          "md": {
+            "$type": "number",
+            "$value": 48,
+            "$description": "Height of the table header ",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40021536:7150",
+              "com.figma.scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-table-header-height-md)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
+                "targetVariableName": "space/10",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
             }
-          }
-        },
-        "lg": {
-          "$type": "number",
-          "$value": 40,
-          "$description": "Width of the large switch track (40px).",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021529:8215",
-            "com.figma.scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "com.figma.codeSyntax": {
-              "WEB": "var(--component-switch-width-lg)"
-            },
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
-              "targetVariableName": "space/09",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
-            }
-          }
-        }
-      },
-      "height": {
-        "sm": {
-          "$type": "number",
-          "$value": 16,
-          "$description": "Height of the small switch track (16px).",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021529:8219",
-            "com.figma.scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "com.figma.codeSyntax": {
-              "WEB": "var(--component-switch-height-sm)"
-            },
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:0c855c75afc6002ff28afe4eadbb1528d9df5b0d/-1:-1",
-              "targetVariableName": "space/05",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
-            }
-          }
-        },
-        "md": {
-          "$type": "number",
-          "$value": 20,
-          "$description": "Height of the medium switch track (20px).",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021529:8220",
-            "com.figma.scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "com.figma.codeSyntax": {
-              "WEB": "var(--component-switch-height-md)"
-            },
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:1cf6a6bf36e5f7fe9644399442dea2356b5ce926/-1:-1",
-              "targetVariableName": "space/06",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
-            }
-          }
-        },
-        "lg": {
-          "$type": "number",
-          "$value": 24,
-          "$description": "Height of the large switch track (24px).",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021529:8221",
-            "com.figma.scopes": [
-              "WIDTH_HEIGHT"
-            ],
-            "com.figma.codeSyntax": {
-              "WEB": "var(--component-switch-height-lg)"
-            },
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
-              "targetVariableName": "space/07",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
+          },
+          "lg": {
+            "$type": "number",
+            "$value": 48,
+            "$description": "Height of the table header ",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40021536:7151",
+              "com.figma.scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-table-header-height-lg)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
+                "targetVariableName": "space/10",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
             }
           }
         }
