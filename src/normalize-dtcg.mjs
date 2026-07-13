@@ -1,48 +1,13 @@
 import { isObject, isReference, tokenName } from "./token-utils.mjs";
 
-const hasDimensionScope = (token, recipe) => {
-  const scopes = new Set(recipe.numberDimensions?.figmaScopes ?? []);
-  return token.figma?.scopes?.some((scope) => scopes.has(scope));
-};
-
-const hasDimensionPath = (path, recipe) => {
-  const pathName = path.join("/");
-  return (
-    recipe.numberDimensions?.pathPrefixes?.some((prefix) =>
-      pathName.startsWith(prefix),
-    ) ||
-    recipe.numberDimensions?.pathMatchers?.some(
-      (matcher) =>
-        (!matcher.startsWith ||
-          pathName === matcher.startsWith ||
-          pathName.startsWith(matcher.startsWith + "/")) &&
-        (!matcher.includes || path.includes(matcher.includes)) &&
-        (!matcher.endsWith || path.at(-1) === matcher.endsWith),
-    )
-  );
-};
-
-const hasPercentagePath = (path, recipe) => {
-  const pathName = path.join("/");
-  return (
-    recipe.numberPercentages?.pathPrefixes?.some((prefix) =>
-      pathName.startsWith(prefix),
-    ) ||
-    recipe.numberPercentages?.pathMatchers?.some(
-      (matcher) =>
-        (!matcher.startsWith ||
-          pathName === matcher.startsWith ||
-          pathName.startsWith(matcher.startsWith + "/")) &&
-        (!matcher.includes || path.includes(matcher.includes)) &&
-        (!matcher.endsWith || path.at(-1) === matcher.endsWith),
-    )
-  );
-};
-
-const isPxNumber = (token, recipe) =>
-  hasDimensionScope(token, recipe) || hasDimensionPath(token.path, recipe);
-const isPercentageNumber = (token, recipe) =>
-  token.type === "number" && hasPercentagePath(token.path, recipe);
+const numberTransform = (token, recipe) =>
+  token.type === "number"
+    ? recipe.numberTransforms?.find((transform) =>
+        transform.figmaScopes.some((scope) =>
+          token.figma?.scopes?.includes(scope),
+        ),
+      )
+    : undefined;
 
 const dtcgPath = (parts) =>
   parts.map((part) => (part === "$root" ? "root" : part));
@@ -127,20 +92,22 @@ const colorHex = (value, name) => {
   return (value.hex + alpha).toUpperCase();
 };
 
-const tokenType = (token, recipe) =>
-  token.type === "number" &&
-  (isPxNumber(token, recipe) || isPercentageNumber(token, recipe))
-    ? "dimension"
-    : token.type;
+const tokenType = (token, transform) =>
+  transform ? "dimension" : token.type;
 
-const tokenValue = (token, recipe, $type, prefix) => {
+const tokenValue = (token, recipe, $type, prefix, transform) => {
   if (token.alias) return aliasReference(token.alias, recipe);
   if (isReference(token.value)) return dtcgReference(token.value, prefix);
   if ($type === "color") return colorHex(token.value, tokenName(token));
-  if (isPercentageNumber(token, recipe)) {
-    return { value: token.value / 100, unit: "em" };
+  if (transform) {
+    if (typeof token.value !== "number") {
+      throw new Error("Expected Figma number at " + tokenName(token));
+    }
+    return {
+      value: token.value * (transform.scale ?? 1),
+      unit: transform.unit,
+    };
   }
-  if ($type === "dimension") return { value: token.value, unit: "px" };
   return token.value;
 };
 
@@ -159,7 +126,8 @@ const figmaExtension = (token) => {
 
 const toDtcg = (token, recipe, prefix) => {
   const name = tokenName(token);
-  const $type = tokenType(token, recipe);
+  const transform = numberTransform(token, recipe);
+  const $type = tokenType(token, transform);
   const figma = figmaExtension(token);
 
   if (!["color", "number", "string", "boolean", "dimension"].includes($type)) {
@@ -168,7 +136,7 @@ const toDtcg = (token, recipe, prefix) => {
 
   return {
     $type,
-    $value: tokenValue(token, recipe, $type, prefix),
+    $value: tokenValue(token, recipe, $type, prefix, transform),
     ...(token.description ? { $description: token.description } : {}),
     $extensions: {
       ds: { source: recipe.source.type, sourcePath: name },

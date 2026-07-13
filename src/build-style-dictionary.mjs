@@ -1,3 +1,4 @@
+import { rm } from "node:fs/promises";
 import StyleDictionary from "style-dictionary";
 import { formats, transformGroups } from "style-dictionary/enums";
 
@@ -64,6 +65,8 @@ const configForTheme = (theme, tokens) => ({
 
 /** Build platform token artifacts from in-memory DTCG tokens. */
 export const buildStyleDictionary = async (context) => {
+  await rm("dist", { recursive: true, force: true });
+
   for (const theme of context.recipe.themes) {
     const tokens = mergeTokenTrees(
       context.dtcg.base,

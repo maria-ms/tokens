@@ -6,38 +6,27 @@ const recipe = {
   source: { type: "figma-export-modes" },
   base: { id: "primitive", collection: "primitive", prefix: ["primitive"] },
   themeCollection: "tokens",
-  numberDimensions: {
-    figmaScopes: ["GAP"],
-    pathPrefixes: ["space"],
-    pathMatchers: [
-      { includes: "shadow", endsWith: "spread" },
-      { startsWith: "component", includes: "width" },
-      { startsWith: "component", includes: "size" },
-    ],
-  },
-  numberPercentages: {
-    pathPrefixes: ["font/letter-spacing"],
-    pathMatchers: [{ includes: "typography", endsWith: "letter-spacing" }],
-  },
+  numberTransforms: [
+    {
+      unit: "px",
+      figmaScopes: ["EFFECT_FLOAT", "GAP", "STROKE_FLOAT", "WIDTH_HEIGHT"],
+    },
+    {
+      unit: "em",
+      scale: 0.01,
+      figmaScopes: ["LETTER_SPACING"],
+    },
+  ],
   themes: [{ id: "light" }],
 };
 
-const figmaToken = ({
-  path,
-  type = "color",
-  value = { hex: "#112233" },
-  alias,
-  description,
-}) => ({
+const token = ({ path, value, type = "color", alias, description, scopes }) => ({
   path,
   type,
   value,
-  description,
-  extensions: {
-    "com.figma.variableId": "VariableID:" + path.join("/"),
-    ...(alias ? { "com.figma.aliasData": alias } : {}),
-  },
   alias,
+  description,
+  ...(scopes ? { figma: { scopes } } : {}),
 });
 
 const primitiveAlias = (targetVariableName = "color/brand/500") => ({
@@ -45,229 +34,163 @@ const primitiveAlias = (targetVariableName = "color/brand/500") => ({
   targetVariableName,
 });
 
-const semanticAlias = (targetVariableName) => ({
-  targetVariableSetName: "tokens",
-  targetVariableName,
-});
-
 const normalize = (figmaTokens) => normalizeDtcg({ recipe, figmaTokens }).dtcg;
-
 const tokenAt = (tree, path) => path.reduce((node, key) => node?.[key], tree);
 
 describe("DTCG translation", () => {
-  test("preserves the token contract needed by Style Dictionary and package consumers", () => {
+  test("normalizes Figma values, references, and number units", () => {
     const dtcg = normalize({
       primitive: [
-        figmaToken({
+        token({
           path: ["color", "brand", "500"],
-          value: { hex: "#6633ff" },
+          value: { hex: "#6633ff", components: [0.4, 0.2, 1] },
           description: "Brand 500",
         }),
-        figmaToken({
+        token({
           path: ["color", "overlay", "50"],
           value: { hex: "#112233", alpha: 0.5 },
         }),
-        figmaToken({
-          path: ["color", "alpha", "brand", "50"],
-          value: { hex: "#6633ff", alpha: 0.05 },
+        token({
+          path: ["shadow", "focus", "color"],
+          value: "{color.overlay.50}",
         }),
-        figmaToken({
-          path: ["shadow", "focused-4px", "color"],
-          value: "{color.alpha.brand.50}",
+        token({
+          path: ["space", "2"],
+          type: "number",
+          value: 8,
+          scopes: ["GAP"],
         }),
-        figmaToken({ path: ["space", "2"], type: "number", value: 8 }),
-        figmaToken({
+        token({
+          path: ["border-width", "2"],
+          type: "number",
+          value: 1.5,
+          scopes: ["STROKE_FLOAT"],
+        }),
+        token({
           path: ["font", "letter-spacing", "tight"],
           type: "number",
           value: 2,
+          scopes: ["LETTER_SPACING"],
         }),
-        figmaToken({ path: ["opacity", "50"], type: "number", value: 0.5 }),
+        token({
+          path: ["font", "weight", "medium"],
+          type: "number",
+          value: 500,
+          scopes: ["FONT_WEIGHT"],
+        }),
       ],
       light: [
-        figmaToken({
+        token({
           path: ["semantic", "color", "background", "default"],
           alias: primitiveAlias(),
         }),
-        figmaToken({
-          path: ["semantic", "color", "foreground", "primary", "$root"],
-          alias: primitiveAlias(),
-        }),
-        figmaToken({
+        token({
           path: ["component", "button", "background"],
-          alias: semanticAlias("semantic/color/background/default"),
+          value: "{semantic.color.background.default}",
         }),
-        figmaToken({
-          path: ["component", "button", "foreground", "primary"],
-          value: "{semantic.color.foreground.primary.$root}",
-        }),
-        figmaToken({
-          path: ["semantic", "shadow", "focused-4px", "spread"],
+        token({
+          path: ["semantic", "shadow", "focus", "spread"],
           type: "number",
           value: 4,
+          scopes: ["EFFECT_FLOAT"],
         }),
-        figmaToken({
-          path: ["semantic", "typography", "body", "small", "letter-spacing"],
-          alias: primitiveAlias("font/letter-spacing/tight"),
-        }),
-        figmaToken({
-          path: ["component", "dropdown", "menu", "width"],
+        token({
+          path: ["component", "progress", "title-width", "sm"],
           type: "number",
-          value: 240,
-        }),
-        figmaToken({
-          path: ["component", "avatar", "size", "md"],
-          type: "number",
-          value: 40,
+          value: 80,
+          scopes: ["WIDTH_HEIGHT"],
         }),
       ],
     });
 
-    const brand = tokenAt(dtcg.base, ["primitive", "color", "brand", "500"]);
-    assert.deepEqual(brand, {
-      $type: "color",
-      $value: "#6633FF",
-      $description: "Brand 500",
-      $extensions: {
-        ds: { source: "figma-export-modes", sourcePath: "color/brand/500" },
-      },
-    });
-
-    assert.equal(
-      tokenAt(dtcg.base, ["primitive", "color", "overlay", "50"]).$value,
-      "#11223380",
-    );
-    assert.equal(
-      tokenAt(dtcg.base, ["primitive", "shadow", "focused-4px", "color"])
-        .$value,
-      "{primitive.color.alpha.brand.50}",
-    );
-    assert.deepEqual(tokenAt(dtcg.base, ["primitive", "space", "2"]).$value, {
-      value: 8,
-      unit: "px",
-    });
-    assert.deepEqual(
-      tokenAt(dtcg.base, [
-        "primitive",
-        "font",
-        "letter-spacing",
-        "tight",
-      ]).$value,
-      { value: 0.02, unit: "em" },
-    );
-    assert.equal(
-      tokenAt(dtcg.base, ["primitive", "opacity", "50"]).$value,
-      0.5,
-    );
-    assert.equal(
-      tokenAt(dtcg.themes.light, ["semantic", "color", "background", "default"])
-        .$value,
-      "{primitive.color.brand.500}",
-    );
-    assert.equal(
-      tokenAt(dtcg.themes.light, ["component", "button", "background"]).$value,
-      "{semantic.color.background.default}",
-    );
-    assert.equal(
-      tokenAt(dtcg.themes.light, [
-        "semantic",
-        "color",
-        "foreground",
-        "primary",
-        "root",
-      ]).$value,
-      "{primitive.color.brand.500}",
-    );
-    assert.equal(
-      tokenAt(dtcg.themes.light, [
-        "component",
-        "button",
-        "foreground",
-        "primary",
-      ]).$value,
-      "{semantic.color.foreground.primary.root}",
-    );
-    assert.deepEqual(
-      tokenAt(dtcg.themes.light, [
-        "semantic",
-        "shadow",
-        "focused-4px",
-        "spread",
-      ]).$value,
-      { value: 4, unit: "px" },
-    );
-    assert.equal(
-      tokenAt(dtcg.themes.light, [
-        "semantic",
-        "typography",
-        "body",
-        "small",
-        "letter-spacing",
-      ]).$value,
-      "{primitive.font.letter-spacing.tight}",
-    );
-    assert.deepEqual(
-      tokenAt(dtcg.themes.light, [
-        "component",
-        "dropdown",
-        "menu",
-        "width",
-      ]).$value,
-      { value: 240, unit: "px" },
-    );
-    assert.deepEqual(
-      tokenAt(dtcg.themes.light, ["component", "avatar", "size", "md"]).$value,
-      { value: 40, unit: "px" },
-    );
-
-    for (const [label, run, message] of [
+    const values = [
+      ["base", ["primitive", "color", "brand", "500"], "#6633FF"],
+      ["base", ["primitive", "color", "overlay", "50"], "#11223380"],
       [
-        "unsupported token types",
-        () =>
-          normalize({
-            primitive: [
-              figmaToken({ path: ["broken"], type: "float", value: 1 }),
-            ],
-            light: [],
-          }),
+        "base",
+        ["primitive", "shadow", "focus", "color"],
+        "{primitive.color.overlay.50}",
+      ],
+      ["base", ["primitive", "space", "2"], { value: 8, unit: "px" }],
+      [
+        "base",
+        ["primitive", "border-width", "2"],
+        { value: 1.5, unit: "px" },
+      ],
+      [
+        "base",
+        ["primitive", "font", "letter-spacing", "tight"],
+        { value: 0.02, unit: "em" },
+      ],
+      ["base", ["primitive", "font", "weight", "medium"], 500],
+      [
+        "light",
+        ["semantic", "color", "background", "default"],
+        "{primitive.color.brand.500}",
+      ],
+      [
+        "light",
+        ["component", "button", "background"],
+        "{semantic.color.background.default}",
+      ],
+      [
+        "light",
+        ["semantic", "shadow", "focus", "spread"],
+        { value: 4, unit: "px" },
+      ],
+      [
+        "light",
+        ["component", "progress", "title-width", "sm"],
+        { value: 80, unit: "px" },
+      ],
+    ];
+
+    const trees = { base: dtcg.base, light: dtcg.themes.light };
+    for (const [tree, path, expected] of values) {
+      assert.deepEqual(tokenAt(trees[tree], path).$value, expected, path.join("/"));
+    }
+
+    assert.deepEqual(
+      tokenAt(dtcg.base, ["primitive", "color", "brand", "500"]),
+      {
+        $type: "color",
+        $value: "#6633FF",
+        $description: "Brand 500",
+        $extensions: {
+          ds: { source: "figma-export-modes", sourcePath: "color/brand/500" },
+        },
+      },
+    );
+  });
+
+  test("rejects source values that cannot produce a valid token tree", () => {
+    const cases = [
+      [
+        [token({ path: ["broken"], type: "float", value: 1 })],
         /Unsupported token type float/,
       ],
       [
-        "invalid Figma colors",
-        () =>
-          normalize({
-            primitive: [
-              figmaToken({ path: ["color", "broken"], value: { r: 1 } }),
-            ],
-            light: [],
-          }),
+        [token({ path: ["color", "broken"], value: { r: 1 } })],
         /Expected Figma color hex/,
       ],
       [
-        "duplicate token paths",
-        () =>
-          normalize({
-            primitive: [
-              figmaToken({ path: ["space", "2"], type: "number", value: 8 }),
-              figmaToken({ path: ["space", "2"], type: "number", value: 8 }),
-            ],
-            light: [],
-          }),
-        new RegExp("Duplicate token path primitive/space/2"),
+        [
+          token({ path: ["space", "2"], type: "number", value: 8 }),
+          token({ path: ["space", "2"], type: "number", value: 8 }),
+        ],
+        /Duplicate token path primitive\/space\/2/,
       ],
       [
-        "token and group name collisions",
-        () =>
-          normalize({
-            primitive: [
-              figmaToken({ path: ["space"], type: "number", value: 8 }),
-              figmaToken({ path: ["space", "2"], type: "number", value: 8 }),
-            ],
-            light: [],
-          }),
-        new RegExp("Token/group collision at primitive/space/2"),
+        [
+          token({ path: ["space"], type: "number", value: 8 }),
+          token({ path: ["space", "2"], type: "number", value: 8 }),
+        ],
+        /Token\/group collision at primitive\/space\/2/,
       ],
-    ]) {
-      assert.throws(run, message, label + " should stop the build");
+    ];
+
+    for (const [primitive, error] of cases) {
+      assert.throws(() => normalize({ primitive, light: [] }), error);
     }
   });
 });

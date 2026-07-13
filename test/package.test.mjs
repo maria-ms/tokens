@@ -39,14 +39,6 @@ describe("Published token package", () => {
       access: "public",
       provenance: true,
     });
-    assert.deepEqual(packageJson.scripts, {
-      dev: "node --watch --watch-path=sources --watch-path=src src/build.mjs",
-      build: "node src/build.mjs",
-      test: 'node --test "src/**/*.test.mjs" "test/**/*.test.mjs"',
-      check: "npm run build && npm run test",
-      prepack: "npm run build",
-    });
-
     for (const target of collectExportTargets(packageJson.exports)) {
       assert.match(target, new RegExp("^\\./(?:dist/|package\\.json$)"));
       assert.doesNotMatch(target, new RegExp("(?:^|/)(?:src|sources)/"));

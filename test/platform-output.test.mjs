@@ -14,6 +14,8 @@ const color =
 const pxDimension = /^-?\d+(?:\.\d+)?px$/;
 const emDimension = /^-?\d+(?:\.\d+)?em$/;
 const nativeReferenceLeak = /var\(|--ds-|\{[^}]+\}/;
+const geometrySegment =
+  /^(?:space|radius)$|(?:^|-)(?:width|height|size|gap|padding|blur|spread|offset-[xy])$/;
 
 const tokenAt = (tokens, path) => {
   const token = path.reduce((node, key) => node?.[key], tokens);
@@ -103,6 +105,10 @@ describe("Generated platform outputs", () => {
     );
     assert.match(
       lightCss,
+      /--ds-primitive-border-width-02:\s*1\.5px;/,
+    );
+    assert.match(
+      lightCss,
       /--ds-semantic-typography-label-default-letter-spacing:\s*var\(--ds-primitive-font-letter-spacing-wide\);/,
     );
     assert.match(lightCss, /--ds-primitive-font-weight-medium:\s*500;/);
@@ -139,6 +145,21 @@ describe("Generated platform outputs", () => {
         path.join(".") + " should be usable",
       );
     }
+
+    for (const tokens of [lightJs, darkJs]) {
+      assert.deepEqual(
+        flatTokens(tokens)
+          .filter(
+            (token) =>
+              token.$type === "number" &&
+              token.path.some((part) => geometrySegment.test(part)),
+          )
+          .map((token) => token.path.join("/")),
+        [],
+        "Geometry tokens must include units.",
+      );
+    }
+
     assert.notEqual(
       tokenValue(lightJs, ["semantic", "color", "background", "default"]),
       tokenValue(darkJs, ["semantic", "color", "background", "default"]),

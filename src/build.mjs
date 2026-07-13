@@ -1,12 +1,9 @@
-import { rm } from "node:fs/promises";
 import { buildStyleDictionary } from "./build-style-dictionary.mjs";
 import { normalizeDtcg } from "./normalize-dtcg.mjs";
 import { readFigmaExportModes } from "./read-figma-export-modes.mjs";
 import { recipe } from "./recipe.mjs";
 import { runPipeline } from "./run-pipeline.mjs";
 import { validateTopology } from "./validate-topology.mjs";
-
-await rm("dist", { recursive: true, force: true });
 
 const result = await runPipeline(
   readFigmaExportModes,

@@ -19,34 +19,36 @@ export const recipe = {
     prefix: ["primitive"],
   },
   themeCollection: "tokens",
-  numberDimensions: {
-    figmaScopes: [
-      "CORNER_RADIUS",
-      "FONT_SIZE",
-      "GAP",
-      "LINE_HEIGHT",
-      "WIDTH_HEIGHT",
+  numberTransforms: [
+    {
+      unit: "px",
+      figmaScopes: [
+        "CORNER_RADIUS",
+        "EFFECT_FLOAT",
+        "FONT_SIZE",
+        "GAP",
+        "LINE_HEIGHT",
+        "STROKE_FLOAT",
+        "WIDTH_HEIGHT",
+      ],
+    },
+    {
+      unit: "em",
+      scale: 0.01,
+      figmaScopes: ["LETTER_SPACING"],
+    },
+  ],
+  validation: {
+    requireScopes: true,
+    disallowedScopes: ["ALL_SCOPES"],
+    requiredScopes: [
+      {
+        scope: "FONT_WEIGHT",
+        pathPrefixes: ["font/weight"],
+        pathSegments: ["font-weight"],
+      },
     ],
-    pathPrefixes: ["space", "radius", "font/size", "font/line-height"],
-    pathMatchers: [
-      { includes: "shadow", endsWith: "blur" },
-      { includes: "shadow", endsWith: "spread" },
-      { includes: "shadow", endsWith: "offset-x" },
-      { includes: "shadow", endsWith: "offset-y" },
-      { startsWith: "component", includes: "width" },
-      { startsWith: "component", includes: "height" },
-      { startsWith: "component", includes: "min-width" },
-      { startsWith: "component", includes: "min-height" },
-      { startsWith: "component", includes: "max-width" },
-      { startsWith: "component", includes: "max-height" },
-      { startsWith: "component", includes: "size" },
-      { startsWith: "component", includes: "gap" },
-      { startsWith: "component", includes: "padding" },
-    ],
-  },
-  numberPercentages: {
-    pathPrefixes: ["font/letter-spacing"],
-    pathMatchers: [{ includes: "typography", endsWith: "letter-spacing" }],
+    invariantThemeTypes: ["number", "string", "boolean"],
   },
   themes: [
     {

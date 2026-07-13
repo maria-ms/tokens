@@ -2,6 +2,70 @@ import { isReference, tokenName } from "./token-utils.mjs";
 
 const sourceEntries = (recipe) => [recipe.base, ...recipe.themes];
 
+const matchesPathRule = (path, rule) => {
+  const name = path.join("/");
+  return (
+    rule.pathPrefixes?.some(
+      (prefix) => name === prefix || name.startsWith(prefix + "/"),
+    ) ||
+    rule.pathSegments?.some((segment) => path.includes(segment))
+  );
+};
+
+const addTokenListError = (errors, source, message, tokens) => {
+  if (tokens.length) {
+    const names = tokens.slice(0, 5).map(tokenName);
+    const remainder = tokens.length - names.length;
+    errors.push(
+      source +
+        ": " +
+        message +
+        ": " +
+        names.join(", ") +
+        (remainder ? ` (+${remainder} more)` : ""),
+    );
+  }
+};
+
+const validateSourceScopes = (errors, context) => {
+  const policy = context.recipe.validation ?? {};
+
+  for (const source of sourceEntries(context.recipe)) {
+    const tokens = context.figmaTokens[source.id] ?? [];
+
+    if (policy.requireScopes) {
+      addTokenListError(
+        errors,
+        source.id,
+        "missing Figma scopes",
+        tokens.filter((token) => !token.figma?.scopes?.length),
+      );
+    }
+
+    for (const scope of policy.disallowedScopes ?? []) {
+      addTokenListError(
+        errors,
+        source.id,
+        "disallowed broad Figma scope " + scope,
+        tokens.filter((token) => token.figma?.scopes?.includes(scope)),
+      );
+    }
+
+    for (const rule of policy.requiredScopes ?? []) {
+      addTokenListError(
+        errors,
+        source.id,
+        "expected Figma scope " + rule.scope,
+        tokens.filter(
+          (token) =>
+            matchesPathRule(token.path, rule) &&
+            !token.figma?.scopes?.includes(rule.scope),
+        ),
+      );
+    }
+  }
+};
+
 const tokenModeName = (tokens) => {
   const names = new Set(
     tokens.map((token) => token.figma?.modeName).filter(Boolean),
@@ -56,8 +120,16 @@ const validateTokenPaths = (errors, group, tokens) => {
   }
 };
 
-const validateThemeParity = (errors, themeEntries) => {
+const sourceIdentity = (token) =>
+  token.alias
+    ? token.alias.targetVariableSetName + "/" + token.alias.targetVariableName
+    : JSON.stringify(token.value);
+
+const validateThemeParity = (errors, recipe, themeEntries) => {
   const [referenceTheme, ...themes] = themeEntries;
+  const invariantTypes = new Set(
+    recipe.validation?.invariantThemeTypes ?? [],
+  );
   const referencePaths = new Map(
     referenceTheme[1].map((token) => [tokenName(token), token]),
   );
@@ -82,6 +154,21 @@ const validateThemeParity = (errors, themeEntries) => {
         .map(
           ([name]) =>
             referenceTheme[0] + "/" + themeId + " type mismatch: " + name,
+        ),
+      ...[...referencePaths]
+        .filter(
+          ([name, token]) =>
+            invariantTypes.has(token.type) &&
+            themePaths.has(name) &&
+            sourceIdentity(themePaths.get(name)) !== sourceIdentity(token),
+        )
+        .map(
+          ([name]) =>
+            referenceTheme[0] +
+            "/" +
+            themeId +
+            " invariant token mismatch: " +
+            name,
         ),
     );
   }
@@ -261,12 +348,13 @@ export const validateTopology = (context) => {
   ]);
   const primitivePaths = new Set(baseTokens.map(tokenName));
 
+  validateSourceScopes(errors, context);
   validateModeNames(errors, context);
   validateTokenPaths(errors, context.recipe.base.id, baseTokens);
   validateBaseReferences(errors, context.recipe, primitivePaths, baseTokens);
   for (const [themeId, tokens] of themeEntries)
     validateTokenPaths(errors, themeId, tokens);
-  validateThemeParity(errors, themeEntries);
+  validateThemeParity(errors, context.recipe, themeEntries);
   for (const [themeId, tokens] of themeEntries) {
     validateThemeAliases(
       errors,

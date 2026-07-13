@@ -5,6 +5,18 @@ import { validateTopology } from "./validate-topology.mjs";
 const recipe = {
   base: { id: "primitive", collection: "primitive", prefix: ["primitive"] },
   themeCollection: "tokens",
+  validation: {
+    requireScopes: true,
+    disallowedScopes: ["ALL_SCOPES"],
+    requiredScopes: [
+      {
+        scope: "FONT_WEIGHT",
+        pathPrefixes: ["font/weight"],
+        pathSegments: ["font-weight"],
+      },
+    ],
+    invariantThemeTypes: ["number", "string", "boolean"],
+  },
   themes: [{ id: "light" }, { id: "dark" }],
 };
 
@@ -15,6 +27,7 @@ const figmaToken = ({
   alias,
   id,
   modeName = "Light",
+  scopes = type === "number" ? ["WIDTH_HEIGHT"] : ["ALL_FILLS"],
 }) => ({
   path,
   type,
@@ -22,6 +35,7 @@ const figmaToken = ({
   figma: {
     modeName,
     variableId: id ?? "VariableID:" + path.join("/"),
+    scopes,
     ...(alias ? { alias } : {}),
   },
   alias,
@@ -172,6 +186,43 @@ const cases = [
     error: new RegExp(
       "unresolved reference \\{primitive\\.color\\.brand\\.missing\\}",
     ),
+  },
+  {
+    name: "variables with broad Figma scopes",
+    edit: (context) => {
+      context.figmaTokens.light[2].figma.scopes = ["ALL_SCOPES"];
+    },
+    error: /disallowed broad Figma scope ALL_SCOPES/,
+  },
+  {
+    name: "font weights with the wrong Figma scope",
+    edit: (context) => {
+      context.figmaTokens.primitive.push(
+        figmaToken({
+          path: ["font", "weight", "medium"],
+          type: "number",
+          value: 500,
+          scopes: ["FONT_STYLE"],
+        }),
+      );
+    },
+    error: /expected Figma scope FONT_WEIGHT/,
+  },
+  {
+    name: "non-color tokens that drift between themes",
+    edit: (context) => {
+      context.figmaTokens.primitive.push(
+        figmaToken({ path: ["space", "08"], type: "number", value: 48 }),
+      );
+      context.figmaTokens.dark[2] = figmaToken({
+        path: ["component", "button", "height", "md"],
+        type: "number",
+        value: 48,
+        alias: primitiveAlias("space/08"),
+        modeName: "Dark",
+      });
+    },
+    error: /light\/dark invariant token mismatch/,
   },
 ];
 

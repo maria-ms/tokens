@@ -68,6 +68,7 @@ describe("Figma source snapshot pipeline", () => {
     ]);
     assert.equal(weightMedium.$type, "number");
     assert.equal(weightMedium.$value, 500);
+    assert.deepEqual(weightMedium.$extensions.figma.scopes, ["FONT_WEIGHT"]);
 
     for (const [themeId, theme] of Object.entries(result.dtcg.themes)) {
       const background = tokenAt(theme, [

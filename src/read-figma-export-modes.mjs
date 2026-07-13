@@ -10,6 +10,21 @@ const string = (value) => (typeof value === "string" ? value : undefined);
 const stringArray = (value) =>
   Array.isArray(value) ? value.filter((item) => typeof item === "string") : [];
 
+// Export Modes serializes numeric font weights as FONT_STYLE even when the
+// Figma Plugin API reports FONT_WEIGHT for the same variables.
+const normalizeScopes = (type, path, scopes) =>
+  type === "number" &&
+  (path.slice(0, 2).join("/") === "font/weight" ||
+    path.includes("font-weight"))
+    ? [
+        ...new Set(
+          scopes.map((scope) =>
+            scope === "FONT_STYLE" ? "FONT_WEIGHT" : scope,
+          ),
+        ),
+      ]
+    : scopes;
+
 const figmaAlias = (extensions) => {
   const alias = extensions["com.figma.aliasData"];
   if (
@@ -32,9 +47,13 @@ const figmaAlias = (extensions) => {
   };
 };
 
-const figmaMetadata = (extensions, modeName) => {
+const figmaMetadata = (extensions, modeName, type, path) => {
   const alias = figmaAlias(extensions);
-  const scopes = stringArray(extensions["com.figma.scopes"]);
+  const scopes = normalizeScopes(
+    type,
+    path,
+    stringArray(extensions["com.figma.scopes"]),
+  );
 
   return {
     ...(modeName ? { modeName } : {}),
@@ -60,12 +79,13 @@ const collectTokens = (node, modeName, parts = []) => {
   }
 
   const extensions = isObject(node.$extensions) ? node.$extensions : {};
-  const figma = figmaMetadata(extensions, modeName);
+  const type = String(node.$type);
+  const figma = figmaMetadata(extensions, modeName, type, parts);
 
   return [
     {
       path: parts,
-      type: String(node.$type),
+      type,
       value: node.$value,
       description:
         typeof node.$description === "string" ? node.$description : undefined,
