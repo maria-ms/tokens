@@ -552,22 +552,44 @@
     },
     "badge": {
       "height": {
-        "$type": "number",
-        "$value": 20,
-        "$description": "Badge container height",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:40021648:42426",
-          "com.figma.scopes": [
-            "WIDTH_HEIGHT"
-          ],
-          "com.figma.codeSyntax": {
-            "WEB": "var(--component-badge-height)"
-          },
-          "com.figma.aliasData": {
-            "targetVariableId": "VariableID:1cf6a6bf36e5f7fe9644399442dea2356b5ce926/-1:-1",
-            "targetVariableName": "space/06",
-            "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-            "targetVariableSetName": "primitive"
+        "sm": {
+          "$type": "number",
+          "$value": 20,
+          "$description": "Badge container height for small size (20px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021648:42426",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-badge-height-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1cf6a6bf36e5f7fe9644399442dea2356b5ce926/-1:-1",
+              "targetVariableName": "space/06",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "md": {
+          "$type": "number",
+          "$value": 24,
+          "$description": "Badge container height for medium size (24px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021712:4429",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-badge-height-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:47a5cb6bf43108299696ff90582854fafd77160f/-1:-1",
+              "targetVariableName": "space/07",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
           }
         }
       },
