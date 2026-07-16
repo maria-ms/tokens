@@ -126,6 +126,72 @@
         }
       }
     },
+    "table": {
+      "header": {
+        "height": {
+          "sm": {
+            "$type": "number",
+            "$value": 40,
+            "$description": "Height of the table header ",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40021536:7149",
+              "com.figma.scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-table-header-height-sm)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
+                "targetVariableName": "space/09",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
+            }
+          },
+          "md": {
+            "$type": "number",
+            "$value": 48,
+            "$description": "Height of the table header ",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40021536:7150",
+              "com.figma.scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-table-header-height-md)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
+                "targetVariableName": "space/10",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
+            }
+          },
+          "lg": {
+            "$type": "number",
+            "$value": 48,
+            "$description": "Height of the table header ",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40021536:7151",
+              "com.figma.scopes": [
+                "WIDTH_HEIGHT"
+              ],
+              "com.figma.codeSyntax": {
+                "WEB": "var(--component-table-header-height-lg)"
+              },
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
+                "targetVariableName": "space/10",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
+            }
+          }
+        }
+      }
+    },
     "progress": {
       "height": {
         "sm": {
@@ -247,72 +313,6 @@
               "targetVariableName": "space/14",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
-            }
-          }
-        }
-      }
-    },
-    "table": {
-      "header": {
-        "height": {
-          "sm": {
-            "$type": "number",
-            "$value": 40,
-            "$description": "Height of the table header ",
-            "$extensions": {
-              "com.figma.variableId": "VariableID:40021536:7149",
-              "com.figma.scopes": [
-                "WIDTH_HEIGHT"
-              ],
-              "com.figma.codeSyntax": {
-                "WEB": "var(--component-table-header-height-sm)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:7a468d0aef117fd00b8f0462ca3775392026d201/-1:-1",
-                "targetVariableName": "space/09",
-                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-                "targetVariableSetName": "primitive"
-              }
-            }
-          },
-          "md": {
-            "$type": "number",
-            "$value": 48,
-            "$description": "Height of the table header ",
-            "$extensions": {
-              "com.figma.variableId": "VariableID:40021536:7150",
-              "com.figma.scopes": [
-                "WIDTH_HEIGHT"
-              ],
-              "com.figma.codeSyntax": {
-                "WEB": "var(--component-table-header-height-md)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
-                "targetVariableName": "space/10",
-                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-                "targetVariableSetName": "primitive"
-              }
-            }
-          },
-          "lg": {
-            "$type": "number",
-            "$value": 48,
-            "$description": "Height of the table header ",
-            "$extensions": {
-              "com.figma.variableId": "VariableID:40021536:7151",
-              "com.figma.scopes": [
-                "WIDTH_HEIGHT"
-              ],
-              "com.figma.codeSyntax": {
-                "WEB": "var(--component-table-header-height-lg)"
-              },
-              "com.figma.aliasData": {
-                "targetVariableId": "VariableID:a6b47bc495d019c265ce703c2b4bdcc18890c0a9/-1:-1",
-                "targetVariableName": "space/10",
-                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-                "targetVariableSetName": "primitive"
-              }
             }
           }
         }
@@ -551,6 +551,20 @@
       }
     },
     "badge": {
+      "height": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Badge container height",
+        "$extensions": {
+          "com.figma.variableId": "VariableID:40021648:42426",
+          "com.figma.scopes": [
+            "WIDTH_HEIGHT"
+          ],
+          "com.figma.codeSyntax": {
+            "WEB": "var(--component-badge-height)"
+          }
+        }
+      },
       "color": {
         "background": {
           "default": {
@@ -2401,6 +2415,68 @@
             }
           }
         }
+      },
+      "radius": {
+        "sm": {
+          "$type": "number",
+          "$value": 6,
+          "$description": "Input border radius — sm",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021701:16449",
+            "com.figma.scopes": [
+              "CORNER_RADIUS"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-input-radius-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:ea7207714d719a025deee5e2c8f7b1a92bfed3ee/-1:-1",
+              "targetVariableName": "radius/03",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "md": {
+          "$type": "number",
+          "$value": 8,
+          "$description": "Input border radius — md",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021698:2345",
+            "com.figma.scopes": [
+              "CORNER_RADIUS"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-input-radius-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:cb3db5b05e6e328325e5f4075d1332be8f476ac3/-1:-1",
+              "targetVariableName": "radius/04",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 12,
+          "$description": "Input border radius — lg",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021701:17626",
+            "com.figma.scopes": [
+              "CORNER_RADIUS"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-input-radius-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:1bb0f6fce26b03b86a3852be12239a5909ff5d85/-1:-1",
+              "targetVariableName": "radius/05",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        }
       }
     },
     "input-otp": {
@@ -2526,6 +2602,70 @@
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:a95642358d3c9750a606687b781ae2b3116d2448/-1:-1",
               "targetVariableName": "space/15",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        }
+      }
+    },
+    "textarea": {
+      "min-height": {
+        "sm": {
+          "$type": "number",
+          "$value": 64,
+          "$description": "Textarea minimum height for small size (64px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021704:3041",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-textarea-min-height-sm)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:938204482c0f19ca50d052498283a1fdc4c3c405/-1:-1",
+              "targetVariableName": "space/11",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "md": {
+          "$type": "number",
+          "$value": 80,
+          "$description": "Textarea minimum height for medium size (80px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021704:3042",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-textarea-min-height-md)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:a32ed801e3485ffaa7db9b0db5f439a7bdf76581/-1:-1",
+              "targetVariableName": "space/12",
+              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+              "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "lg": {
+          "$type": "number",
+          "$value": 96,
+          "$description": "Textarea minimum height for large size (96px).",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021710:33462",
+            "com.figma.scopes": [
+              "WIDTH_HEIGHT"
+            ],
+            "com.figma.codeSyntax": {
+              "WEB": "var(--component-textarea-min-height-lg)"
+            },
+            "com.figma.aliasData": {
+              "targetVariableId": "VariableID:236451c2c907cabae835780d24214b46e3dea10e/-1:-1",
+              "targetVariableName": "space/13",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
