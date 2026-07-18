@@ -1,493 +1,88 @@
 # Maria Design Tokens
 
-This package provides generated token outputs for web apps, React, Web Components, React Native, and tooling that needs JSON or JavaScript token data.
+This package is the versioned design contract between Figma and web code.
 
-Use this repo as the shared contract between design and engineering for primitive, semantic, and component tokens across light and dark mode.
+Figma Variables are the source of truth. This package publishes only resolved
+web CSS custom properties and JSON for tooling. It does not contain component
+code, component documentation, or application styles.
 
-## What this repo contains
+## Consumer contract
 
-This repo exposes three levels of tokens:
+| Entry point | Purpose |
+| --- | --- |
+| `@maria-ms/tokens/css/light` | Light-theme CSS custom properties |
+| `@maria-ms/tokens/css/dark` | Dark-theme CSS custom properties |
+| `@maria-ms/tokens/json/light` | Resolved light-theme values for tooling |
+| `@maria-ms/tokens/json/dark` | Resolved dark-theme values for tooling |
 
-- **Primitive tokens**: raw design values such as color scales, spacing, radius, typography, and shadows.
-- **Semantic tokens**: product-facing tokens that describe intent, such as background, foreground, border, focus, danger, or success.
-- **Component tokens**: component-specific tokens for cases where a reusable component needs its own contract, such as inputs, buttons, or cards.
+The package root is intentionally not importable.
 
-Product code should prefer **semantic** and **component** tokens.
+### Web use
 
-Primitive tokens are available for low-level system work, but they should not be the default app contract.
-
-## Preview
-
-Include a small visual preview here if useful.
-
-Recommended preview:
-
-- light mode semantic colors
-- dark mode semantic colors
-- key foreground, background, border, accent, success, warning, and danger tokens
-
-Do not treat screenshots as the source of truth. Screenshots are only a visual reference. The source of truth is the Figma Variables export and the generated token output.
-
-```md
-![Maria token preview](./docs/token-preview.png)
-```
-
-## Install
-
-```sh
-npm install @maria-ms/tokens
-```
-
-## Use in web apps
-
-Import the CSS files once in your application shell.
+Import both theme files once at the application or component-library boundary.
 
 ```ts
 import "@maria-ms/tokens/css/light";
 import "@maria-ms/tokens/css/dark";
 ```
 
-Light tokens are applied to:
-
-```css
-:root,
-[data-theme="light"]
-```
-
-Dark tokens are applied to:
-
-```css
-[data-theme="dark"]
-```
-
-Set the active theme with `data-theme`.
-
-```html
-<html data-theme="light">
-  ...
-</html>
-```
-
-Use the generated CSS custom properties in product styles.
-
-```css
-.surface {
-  background: var(--ds-semantic-color-background-default);
-  color: var(--ds-semantic-color-foreground-default);
-}
-
-.field {
-  background: var(--ds-component-input-color-background-default);
-  border-color: var(--ds-component-input-color-border-default);
-}
-```
-
-Avoid hardcoded design values in product code.
-
-```css
-/* Avoid */
-color: #111827;
-
-/* Prefer */
-color: var(--ds-semantic-color-foreground-default);
-```
-
-## Use in React
-
-React apps should consume the CSS entry points at the app root.
-
-```tsx
-import "@maria-ms/tokens/css/light";
-import "@maria-ms/tokens/css/dark";
-
-export function App() {
-  return <main data-theme="light">...</main>;
-}
-```
-
-Use CSS custom properties in styles, CSS modules, CSS-in-JS, or component libraries.
-
-```tsx
-export function Card({ children }: { children: React.ReactNode }) {
-  return <section className="card">{children}</section>;
-}
-```
-
-```css
-.card {
-  background: var(--ds-semantic-color-background-default);
-  color: var(--ds-semantic-color-foreground-default);
-  border: 1px solid var(--ds-semantic-color-border-default);
-}
-```
-
-## Use in Web Components
-
-Import the CSS entry points before registering or rendering components.
-
-```ts
-import "@maria-ms/tokens/css/light";
-import "@maria-ms/tokens/css/dark";
-```
-
-Components should reference the generated CSS variables.
+Light tokens apply to `:root` and `[data-theme="light"]`. Dark tokens apply to
+`[data-theme="dark"]`.
 
 ```css
 :host {
-  color: var(--ds-semantic-color-foreground-default);
   background: var(--ds-semantic-color-background-default);
+  color: var(--ds-semantic-color-foreground-default);
 }
 ```
 
-## Use in React Native
+Use semantic tokens by default. Use component tokens when a component has a
+deliberate, stable visual contract. Do not use primitive tokens in product UI
+unless creating a new semantic or component token.
 
-Use the React Native entry points for native-compatible token objects.
-
-```ts
-import tokens from "@maria-ms/tokens/react-native/light";
-
-const styles = {
-  screen: {
-    backgroundColor: tokens.semantic.color.background.default.$value,
-  },
-};
-```
-
-Use the matching theme entry point for the active app theme.
-
-```ts
-import lightTokens from "@maria-ms/tokens/react-native/light";
-import darkTokens from "@maria-ms/tokens/react-native/dark";
-```
-
-## Use in JavaScript tooling
-
-Use the JavaScript entry points when you need token metadata in build tools, documentation, tests, or code generation.
-
-```ts
-import tokens from "@maria-ms/tokens/js/light";
-
-console.log(tokens.semantic.color.background.default.$value);
-```
-
-## Entry points
-
-The package root is intentionally not an import target. Use an explicit platform and theme entry point.
-
-| Entry point                           | Use                                       |
-| ------------------------------------- | ----------------------------------------- |
-| `@maria-ms/tokens/css/light`          | Light CSS custom properties               |
-| `@maria-ms/tokens/css/dark`           | Dark CSS custom properties                |
-| `@maria-ms/tokens/js/light`           | Light token object for JavaScript tooling |
-| `@maria-ms/tokens/js/dark`            | Dark token object for JavaScript tooling  |
-| `@maria-ms/tokens/react-native/light` | Light token object for React Native       |
-| `@maria-ms/tokens/react-native/dark`  | Dark token object for React Native        |
-| `@maria-ms/tokens/json/light`         | Light generated JSON output               |
-| `@maria-ms/tokens/json/dark`          | Dark generated JSON output                |
-
-## Output contract
-
-| Output                            | Contents                                   |
-| --------------------------------- | ------------------------------------------ |
-| `dist/css/*.css`                  | CSS custom properties for browser runtimes |
-| `dist/js/*/tokens.mjs`            | ESM token objects with metadata            |
-| `dist/js/*/tokens.d.ts`           | TypeScript declarations for JS output      |
-| `dist/react-native/*/tokens.mjs`  | React Native-compatible ESM token objects  |
-| `dist/react-native/*/tokens.d.ts` | TypeScript declarations for RN output      |
-| `dist/json/*.json`                | Generated JSON token output                |
-
-The npm package publishes only:
-
-```text
-dist
-README.md
-package.json
-```
-
-Do not edit `dist` by hand.
-
-## Token model
-
-### Primitive tokens
-
-Primitive tokens store raw values.
-
-```json
-{
-  "primitive": {
-    "color": {
-      "blue": {
-        "500": {
-          "$value": "#2563EB"
-        }
-      }
-    }
-  }
-}
-```
-
-Primitive tokens should mainly be used to define semantic and component tokens.
-
-### Semantic tokens
-
-Semantic tokens describe UI intent.
-
-```json
-{
-  "semantic": {
-    "color": {
-      "background": {
-        "default": {
-          "$value": "{primitive.color.neutral.0}"
-        }
-      },
-      "foreground": {
-        "default": {
-          "$value": "{primitive.color.neutral.950}"
-        }
-      }
-    }
-  }
-}
-```
-
-Product teams should use semantic tokens by default.
-
-### Component tokens
-
-Component tokens define reusable component-level decisions.
-
-```json
-{
-  "component": {
-    "input": {
-      "color": {
-        "background": {
-          "default": {
-            "$value": "{semantic.color.background.default}"
-          }
-        },
-        "border": {
-          "default": {
-            "$value": "{semantic.color.border.default}"
-          }
-        }
-      }
-    }
-  }
-}
-```
-
-Use component tokens when a component needs a stable API that should not leak implementation details.
-
-## Modes
-
-This token system supports:
-
-- light mode
-- dark mode
-
-Light and dark modes must have matching semantic and component token coverage.
-
-Mode-specific values should live in the semantic or component layer, not in product code.
-
-## Naming convention
-
-Token names should describe usage, not appearance.
-
-Good:
-
-```text
-semantic.color.foreground.danger
-component.input.color.border.default
-```
-
-Avoid:
-
-```text
-semantic.color.foreground.red
-component.input.color.border.gray
-```
-
-A useful naming pattern is:
-
-```text
-namespace.category.role.variant.state
-```
-
-Examples:
-
-```text
-semantic.color.background.default
-semantic.color.background.subtle
-semantic.color.foreground.default
-semantic.color.foreground.muted
-semantic.color.border.default
-semantic.color.border.focus
-component.input.color.background.default
-component.input.color.border.default
-```
-
-## Source pipeline
-
-The source of truth starts in Figma Variables.
+## Source and build
 
 ```text
 Figma Variables
-  -> Figma export snapshots
-  -> validated intermediate token graph
-  -> Style Dictionary
-  -> dist
+  → committed Export Modes snapshots
+  → validate
+  → normalize to DTCG in memory
+  → dist/css and dist/json
 ```
 
-Source snapshots live in:
+The committed snapshots are replaced directly from Figma Export Modes:
 
-```text
-sources/figma-export-modes
-```
+| Figma collection | Figma mode | Snapshot |
+| --- | --- | --- |
+| `primitive` | `Light` | `sources/figma-export-modes/primitive/Light.tokens.json` |
+| `tokens` | `Light` | `sources/figma-export-modes/tokens/Light.tokens.json` |
+| `tokens` | `Dark` | `sources/figma-export-modes/tokens/Dark.tokens.json` |
 
-Generated output lives in:
-
-```text
-dist
-```
-
-The build recipe in `src/recipe.mjs` defines the expected collections, modes, theme selectors, and number-to-dimension policy.
-
-Update the recipe only when the Figma source structure intentionally changes.
-
-## Replacing Figma exports
-
-Export modes from the Figma Variables panel and replace the matching snapshot files.
-
-| Figma collection | Figma mode | File                                                     |
-| ---------------- | ---------- | -------------------------------------------------------- |
-| `primitive`      | `Light`    | `sources/figma-export-modes/primitive/Light.tokens.json` |
-| `tokens`         | `Light`    | `sources/figma-export-modes/tokens/Light.tokens.json`    |
-| `tokens`         | `Dark`     | `sources/figma-export-modes/tokens/Dark.tokens.json`     |
-
-For local iteration, run:
-
-```sh
-npm run dev
-```
-
-The watcher rebuilds after each save.
-
-If files are replaced one at a time, temporary validation failures are expected. Aliases or light/dark coverage can be out of sync until the last file is replaced.
-
-After all files are in place, the next rebuild should succeed.
-
-Before committing or publishing, run:
+Run the complete production check after replacing all three snapshots:
 
 ```sh
 npm run check
 ```
 
-## Validation
+The build fails when a source mode is wrong, aliases cannot resolve, light and
+dark coverage differs, scopes are missing or broad, unsupported values appear,
+or generated output names collide. A failed build keeps the previous `dist`
+directory intact.
 
-The build validates the token graph before generating output.
+## Rules
 
-Validation checks that:
+- `primitive` holds raw values.
+- `semantic` expresses product intent.
+- `component` captures stable, component-specific decisions.
+- Component tokens must not alias primitives directly; use semantic tokens.
+- A rename or removal is a breaking change. Coordinate consumers before release.
+- Never edit `dist` by hand.
 
-- aliases resolve across primitive, semantic, and component tokens
-- component tokens do not alias primitive tokens directly
-- light and dark modes have matching token coverage
-- unresolved references fail the build
-- broken values fail the build
-- exported files match the expected Figma mode names
-- number dimensions follow Figma scopes and recipe path rules
-- generated files are rebuilt before tests run
+## Commands
 
-## Development
-
-Install dependencies:
-
-```sh
-npm ci
-```
-
-Run the full check:
-
-```sh
-npm run check
-```
-
-Useful commands:
-
-| Command         | Does                                              |
-| --------------- | ------------------------------------------------- |
-| `npm run dev`   | Watches `sources` and `src`, then rebuilds `dist` |
-| `npm run build` | Regenerates `dist`                                |
-| `npm run test`  | Runs unit and contract tests                      |
-| `npm run check` | Builds and tests the package                      |
-
-## Publishing
-
-Publishing is handled by GitHub Actions when a GitHub Release is published.
-
-The package is configured for public npm publishing with provenance.
-
-Do not publish manually unless the release process explicitly requires it.
-
-## Making token changes
-
-Before adding or changing a token, check:
-
-- Is this a reusable product need?
-- Should this be semantic or component-level instead of primitive?
-- Does it work in light and dark mode?
-- Does it preserve the existing output contract?
-- Does it create a breaking change?
-- Does the change need migration notes?
-
-A pull request should include:
-
-- reason for the change
-- affected token names
-- affected modes
-- screenshots or examples if visual behavior changes
-- migration notes for renamed, removed, or behavior-changing tokens
-
-## Deprecation policy
-
-Do not remove or rename tokens without a migration path.
-
-When replacing a token:
-
-1. Add the replacement token.
-2. Mark the old token as deprecated if supported by the token format.
-3. Document the migration.
-4. Remove the old token in a future breaking release.
-
-## Versioning
-
-Use semantic versioning.
-
-Use:
-
-- **patch** for fixes that do not change intended UI
-- **minor** for new tokens or non-breaking additions
-- **major** for renamed, removed, or behavior-changing tokens
-
-Every release should include a changelog entry.
-
-## What not to do
-
-Do not hardcode primitive values in product code.
-
-Do not use primitive tokens as the default product API.
-
-Do not add tokens for one-off designs.
-
-Do not edit `dist` by hand.
-
-Do not rename or remove tokens without a migration path.
-
-Do not use screenshots as the source of truth.
-
-## Support
-
-For usage questions, ask the design system team.
-
-For token changes, open an issue or pull request.
+| Command | Result |
+| --- | --- |
+| `npm run build` | Validates Figma snapshots and replaces `dist` on success |
+| `npm run test` | Runs source, output, and package-contract tests |
+| `npm run check` | Builds and tests the publishable package |
+| `npm run dev` | Watches snapshots and source files, then rebuilds |

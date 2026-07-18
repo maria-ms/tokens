@@ -19,10 +19,6 @@ const publicExports = [
   "./css/dark",
   "./json/light",
   "./json/dark",
-  "./js/light",
-  "./js/dark",
-  "./react-native/light",
-  "./react-native/dark",
   "./package.json",
 ];
 
@@ -44,20 +40,5 @@ describe("Published token package", () => {
       assert.doesNotMatch(target, new RegExp("(?:^|/)(?:src|sources)/"));
     }
 
-    for (const name of [
-      "./js/light",
-      "./js/dark",
-      "./react-native/light",
-      "./react-native/dark",
-    ]) {
-      assert.equal(
-        packageJson.exports[name].import,
-        packageJson.exports[name].default,
-      );
-      assert.match(
-        packageJson.exports[name].import,
-        new RegExp("^\\./dist/.+\\.mjs$"),
-      );
-    }
   });
 });

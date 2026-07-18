@@ -3,7 +3,6 @@ import { describe, test } from "node:test";
 import { normalizeDtcg } from "../src/normalize-dtcg.mjs";
 import { readFigmaExportModes } from "../src/read-figma-export-modes.mjs";
 import { recipe } from "../src/recipe.mjs";
-import { runPipeline } from "../src/run-pipeline.mjs";
 import { validateTopology } from "../src/validate-topology.mjs";
 
 const tokenPathSet = (tokens) =>
@@ -21,11 +20,8 @@ describe("Figma source snapshot pipeline", () => {
   test("turns the committed Figma Export Modes snapshots into the DTCG contract", async () => {
     assert.equal(recipe.source.root, "sources/figma-export-modes");
 
-    const result = await runPipeline(
-      readFigmaExportModes,
-      validateTopology,
-      normalizeDtcg,
-    )(recipe);
+    const source = await readFigmaExportModes(recipe);
+    const result = normalizeDtcg(validateTopology(source));
 
     for (const [group, path] of [
       ["primitive", "color/solid/brand/500"],
@@ -34,7 +30,7 @@ describe("Figma source snapshot pipeline", () => {
       ["primitive", "radius/04"],
       ["light", "semantic/color/background/default"],
       ["light", "component/input/color/background/default"],
-      ["light", "semantic/shadow/focused-4px/spread"],
+      ["light", "semantic/border/focus/primary/spread"],
     ]) {
       assert.ok(
         tokenPathSet(result.figmaTokens[group]).has(path),
@@ -95,8 +91,9 @@ describe("Figma source snapshot pipeline", () => {
     assert.match(
       tokenAt(result.dtcg.themes.light, [
         "semantic",
-        "shadow",
-        "focused-4px",
+        "border",
+        "focus",
+        "primary",
         "color",
       ]).$value,
       /^\{primitive\.shadow\.focused-4px-primary\.color\}/,
@@ -122,8 +119,9 @@ describe("Figma source snapshot pipeline", () => {
     assert.equal(
       tokenAt(result.dtcg.themes.light, [
         "semantic",
-        "shadow",
-        "focused-4px",
+        "border",
+        "focus",
+        "primary",
         "spread",
       ]).$value,
       "{primitive.shadow.focused-4px-primary.spread}",

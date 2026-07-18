@@ -1,7 +1,7 @@
 {
   "name": "@maria-ms/tokens",
   "version": "1.0.0",
-  "description": "Design system tokens generated from Figma variables for CSS, JavaScript, and React Native.",
+  "description": "Design system tokens generated from Figma variables for web CSS and tooling JSON.",
   "type": "module",
   "sideEffects": [
     "./dist/css/*.css"
@@ -23,34 +23,13 @@
     "design-tokens",
     "style-dictionary",
     "figma",
-    "css-variables",
-    "react-native"
+    "css-variables"
   ],
   "exports": {
     "./css/light": "./dist/css/light.css",
     "./css/dark": "./dist/css/dark.css",
     "./json/light": "./dist/json/light.json",
     "./json/dark": "./dist/json/dark.json",
-    "./js/light": {
-      "types": "./dist/js/light/tokens.d.ts",
-      "import": "./dist/js/light/tokens.mjs",
-      "default": "./dist/js/light/tokens.mjs"
-    },
-    "./js/dark": {
-      "types": "./dist/js/dark/tokens.d.ts",
-      "import": "./dist/js/dark/tokens.mjs",
-      "default": "./dist/js/dark/tokens.mjs"
-    },
-    "./react-native/light": {
-      "types": "./dist/react-native/light/tokens.d.ts",
-      "import": "./dist/react-native/light/tokens.mjs",
-      "default": "./dist/react-native/light/tokens.mjs"
-    },
-    "./react-native/dark": {
-      "types": "./dist/react-native/dark/tokens.d.ts",
-      "import": "./dist/react-native/dark/tokens.mjs",
-      "default": "./dist/react-native/dark/tokens.mjs"
-    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -65,6 +44,6 @@
     "prepack": "npm run build"
   },
   "devDependencies": {
-    "style-dictionary": "latest"
+    "style-dictionary": "5.5.0"
   }
 }

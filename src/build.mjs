@@ -2,15 +2,12 @@ import { buildStyleDictionary } from "./build-style-dictionary.mjs";
 import { normalizeDtcg } from "./normalize-dtcg.mjs";
 import { readFigmaExportModes } from "./read-figma-export-modes.mjs";
 import { recipe } from "./recipe.mjs";
-import { runPipeline } from "./run-pipeline.mjs";
 import { validateTopology } from "./validate-topology.mjs";
 
-const result = await runPipeline(
-  readFigmaExportModes,
-  validateTopology,
-  normalizeDtcg,
-  buildStyleDictionary,
-)(recipe);
+const source = await readFigmaExportModes(recipe);
+const validated = validateTopology(source);
+const normalized = normalizeDtcg(validated);
+const result = await buildStyleDictionary(normalized);
 
 console.log(`Built platform tokens from ${result.recipe.source.name}`);
 console.log(

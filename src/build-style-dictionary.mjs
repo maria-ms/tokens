@@ -1,4 +1,4 @@
-import { rm } from "node:fs/promises";
+import { rename, rm } from "node:fs/promises";
 import StyleDictionary from "style-dictionary";
 import { formats, transformGroups } from "style-dictionary/enums";
 
@@ -14,14 +14,15 @@ const mergeTokenTrees = (baseTokens, themeTokens, themeId) => {
   return { ...baseTokens, ...themeTokens };
 };
 
-const configForTheme = (theme, tokens) => ({
+const configForTheme = (theme, tokens, buildPath) => ({
   usesDtcg: true,
   tokens,
+  log: { warnings: "error" },
   platforms: {
     css: {
       transformGroup: transformGroups.css,
       prefix: "ds",
-      buildPath: "dist/css/",
+      buildPath: buildPath + "/css/",
       files: [
         {
           destination: `${theme.id}.css`,
@@ -33,31 +34,9 @@ const configForTheme = (theme, tokens) => ({
         },
       ],
     },
-    js: {
-      transformGroup: transformGroups.js,
-      buildPath: `dist/js/${theme.id}/`,
-      files: [
-        { destination: "tokens.mjs", format: formats.javascriptEsm },
-        {
-          destination: "tokens.d.ts",
-          format: formats.typescriptEs6Declarations,
-        },
-      ],
-    },
-    reactNative: {
-      transformGroup: transformGroups.reactNative,
-      buildPath: `dist/react-native/${theme.id}/`,
-      files: [
-        { destination: "tokens.mjs", format: formats.javascriptEsm },
-        {
-          destination: "tokens.d.ts",
-          format: formats.typescriptEs6Declarations,
-        },
-      ],
-    },
     json: {
       transformGroup: transformGroups.js,
-      buildPath: "dist/json/",
+      buildPath: buildPath + "/json/",
       files: [{ destination: `${theme.id}.json`, format: formats.jsonNested }],
     },
   },
@@ -65,17 +44,27 @@ const configForTheme = (theme, tokens) => ({
 
 /** Build platform token artifacts from in-memory DTCG tokens. */
 export const buildStyleDictionary = async (context) => {
-  await rm("dist", { recursive: true, force: true });
+  const stagingPath = ".dist-build";
+  await rm(stagingPath, { recursive: true, force: true });
 
-  for (const theme of context.recipe.themes) {
-    const tokens = mergeTokenTrees(
-      context.dtcg.base,
-      context.dtcg.themes[theme.id],
-      theme.id,
-    );
-    await new StyleDictionary(
-      configForTheme(theme, tokens),
-    ).buildAllPlatforms();
+  try {
+    for (const theme of context.recipe.themes) {
+      const tokens = mergeTokenTrees(
+        context.dtcg.base,
+        context.dtcg.themes[theme.id],
+        theme.id,
+      );
+      const dictionary = new StyleDictionary(
+        configForTheme(theme, tokens, stagingPath),
+      );
+      await dictionary.buildPlatform("css");
+      await dictionary.buildPlatform("json");
+    }
+    await rm("dist", { recursive: true, force: true });
+    await rename(stagingPath, "dist");
+  } catch (error) {
+    await rm(stagingPath, { recursive: true, force: true });
+    throw error;
   }
 
   return context;
