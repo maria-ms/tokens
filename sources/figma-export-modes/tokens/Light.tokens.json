@@ -22,8 +22,8 @@
               "SHAPE_FILL"
             ],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:d2b9cbaa35d1214bd2b59421afb12734b003bd1c/-1:-1",
-              "targetVariableName": "color/solid/neutral/50",
+              "targetVariableId": "VariableID:8d1c845ec335a360f43c80ea3ee003a4329b385c/-1:-1",
+              "targetVariableName": "color/solid/neutral/100",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -507,12 +507,12 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9803921580314636,
-                  0.9803921580314636,
-                  0.9803921580314636
+                  1,
+                  1,
+                  1
                 ],
                 "alpha": 1,
-                "hex": "#FAFAFA"
+                "hex": "#FFFFFF"
               },
               "$description": "Semantic background color for surfaces and states. Alias this token in components instead of using primitive colors directly.",
               "$extensions": {
@@ -534,12 +534,12 @@
               "$value": {
                 "colorSpace": "srgb",
                 "components": [
-                  0.9607843160629272,
-                  0.9607843160629272,
-                  0.9607843160629272
+                  0.9803921580314636,
+                  0.9803921580314636,
+                  0.9803921580314636
                 ],
                 "alpha": 1,
-                "hex": "#F5F5F5"
+                "hex": "#FAFAFA"
               },
               "$description": "Semantic background color for surfaces and states. Alias this token in components instead of using primitive colors directly.",
               "$extensions": {
@@ -786,12 +786,12 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.9607843160629272,
-                0.9607843160629272,
-                0.9607843160629272
+                0.9803921580314636,
+                0.9803921580314636,
+                0.9803921580314636
               ],
               "alpha": 1,
-              "hex": "#F5F5F5"
+              "hex": "#FAFAFA"
             },
             "$description": "Muted disabled background — use for disabled input fields and inactive form elements.",
             "$extensions": {
@@ -813,12 +813,12 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.8980392217636108,
-                0.8980392217636108,
-                0.8980392217636108
+                0.9607843160629272,
+                0.9607843160629272,
+                0.9607843160629272
               ],
               "alpha": 1,
-              "hex": "#E5E5E5"
+              "hex": "#F5F5F5"
             },
             "$description": "Elevated disabled background — use for disabled button fills.",
             "$extensions": {
@@ -954,12 +954,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9803921580314636,
-              0.9803921580314636,
-              0.9803921580314636
+              1,
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#FAFAFA"
+            "hex": "#FFFFFF"
           },
           "$description": "Inverted foreground — use for text and icons placed on dark or brand-filled surfaces.",
           "$extensions": {
@@ -1612,12 +1612,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9803921580314636,
-              0.9803921580314636,
-              0.9803921580314636
+              1,
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#FAFAFA"
+            "hex": "#FFFFFF"
           },
           "$description": "Semantic border color for outlines, dividers, focus, and stateful strokes.",
           "$extensions": {
@@ -1905,12 +1905,12 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.9607843160629272,
-                0.9607843160629272,
-                0.9607843160629272
+                0.9803921580314636,
+                0.9803921580314636,
+                0.9803921580314636
               ],
               "alpha": 1,
-              "hex": "#F5F5F5"
+              "hex": "#FAFAFA"
             },
             "$description": "Semantic border color for outlines, dividers, focus, and stateful strokes.",
             "$extensions": {
@@ -1931,12 +1931,12 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.8980392217636108,
-                0.8980392217636108,
-                0.8980392217636108
+                0.9607843160629272,
+                0.9607843160629272,
+                0.9607843160629272
               ],
               "alpha": 1,
-              "hex": "#E5E5E5"
+              "hex": "#F5F5F5"
             },
             "$description": "Semantic border color for outlines, dividers, focus, and stateful strokes.",
             "$extensions": {
@@ -1960,12 +1960,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9803921580314636,
-              0.9803921580314636,
-              0.9803921580314636
+              1,
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#FAFAFA"
+            "hex": "#FFFFFF"
           },
           "$description": "Semantic surface color for surfaces and states. Alias this token in components instead of using primitive colors directly.",
           "$extensions": {
@@ -1982,44 +1982,17 @@
             }
           }
         },
-        "muted": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9764705896377563,
-              0.9803921580314636,
-              0.9843137264251709
-            ],
-            "alpha": 1,
-            "hex": "#F9FAFB"
-          },
-          "$description": "Semantic surface color for surfaces and states. Alias this token in components instead of using primitive colors directly.",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020816:11648",
-            "com.figma.scopes": [
-              "FRAME_FILL",
-              "SHAPE_FILL"
-            ],
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:b66a27a800fee5e7304e5b12c426f3cea8c3b6b7/-1:-1",
-              "targetVariableName": "color/solid/gray/50",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
-            }
-          }
-        },
         "elevated": {
           "$type": "color",
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9529411792755127,
-              0.95686274766922,
-              0.9647058844566345
+              0.8980392217636108,
+              0.9058823585510254,
+              0.9215686321258545
             ],
             "alpha": 1,
-            "hex": "#F3F4F6"
+            "hex": "#E5E7EB"
           },
           "$description": "Semantic surface color for surfaces and states. Alias this token in components instead of using primitive colors directly.",
           "$extensions": {
@@ -2029,8 +2002,8 @@
               "SHAPE_FILL"
             ],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:472d604c0ec3965e70add74ac87290da64ff9f89/-1:-1",
-              "targetVariableName": "color/solid/gray/100",
+              "targetVariableId": "VariableID:423d2f5f92cded1ee3aa80530c5cdf11d096bd3f/-1:-1",
+              "targetVariableName": "color/solid/gray/200",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -8466,30 +8439,6 @@
       }
     },
     "sidebar": {
-      "background": {
-        "default": {
-          "$type": "color",
-          "$value": "{semantic.color.background.default}",
-          "$description": "Default background color for the sidebar",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021848:59680",
-            "com.figma.scopes": [
-              "FRAME_FILL"
-            ]
-          }
-        },
-        "hover": {
-          "$type": "color",
-          "$value": "{semantic.color.background.muted.2}",
-          "$description": "Background color for sidebar items on hover",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021848:59681",
-            "com.figma.scopes": [
-              "FRAME_FILL"
-            ]
-          }
-        }
-      },
       "foreground": {
         "default": {
           "$type": "color",
@@ -8514,6 +8463,30 @@
               "SHAPE_FILL",
               "TEXT_FILL",
               "STROKE"
+            ]
+          }
+        }
+      },
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{semantic.color.background.default}",
+          "$description": "Default background color for the sidebar",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021848:59680",
+            "com.figma.scopes": [
+              "FRAME_FILL"
+            ]
+          }
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{semantic.color.background.muted.2}",
+          "$description": "Background color for sidebar items on hover",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021848:59681",
+            "com.figma.scopes": [
+              "FRAME_FILL"
             ]
           }
         }

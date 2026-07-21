@@ -1817,12 +1817,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9803921580314636,
-              0.9803921580314636,
-              0.9803921580314636
+              1,
+              1,
+              1
             ],
             "alpha": 1,
-            "hex": "#FAFAFA"
+            "hex": "#FFFFFF"
           },
           "$description": "White — #FFFFFF",
           "$extensions": {
@@ -1838,12 +1838,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9607843160629272,
-              0.9607843160629272,
-              0.9607843160629272
+              0.9803921580314636,
+              0.9803921580314636,
+              0.9803921580314636
             ],
             "alpha": 1,
-            "hex": "#F5F5F5"
+            "hex": "#FAFAFA"
           },
           "$description": "Neutral 100 — Extra light (#F5F5F5)",
           "$extensions": {
@@ -1859,12 +1859,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.8980392217636108,
-              0.8980392217636108,
-              0.8980392217636108
+              0.9607843160629272,
+              0.9607843160629272,
+              0.9607843160629272
             ],
             "alpha": 1,
-            "hex": "#E5E5E5"
+            "hex": "#F5F5F5"
           },
           "$description": "Neutral 200 — Very light (#E5E5E5)",
           "$extensions": {
