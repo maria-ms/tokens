@@ -22,7 +22,7 @@
               "SHAPE_FILL"
             ],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:d8bf27098e6bb08755f3420210c6c67cabb2ab2e/-1:-1",
+              "targetVariableId": "VariableID:d2b9cbaa35d1214bd2b59421afb12734b003bd1c/-1:-1",
               "targetVariableName": "color/solid/neutral/50",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
@@ -34,12 +34,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9803921580314636,
-              0.9803921580314636,
-              0.9803921580314636
+              0.03921568766236305,
+              0.03921568766236305,
+              0.03921568766236305
             ],
             "alpha": 1,
-            "hex": "#FAFAFA"
+            "hex": "#0A0A0A"
           },
           "$description": "Overlay background — use for modal sheets, dialogs, and panel surfaces that float above the canvas.",
           "$extensions": {
@@ -49,8 +49,8 @@
               "SHAPE_FILL"
             ],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:d8bf27098e6bb08755f3420210c6c67cabb2ab2e/-1:-1",
-              "targetVariableName": "color/solid/neutral/50",
+              "targetVariableId": "VariableID:ddd245df5810ec900fead21ca1ab41ad3f0d1b14/-1:-1",
+              "targetVariableName": "color/solid/neutral/950",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -522,7 +522,7 @@
                   "SHAPE_FILL"
                 ],
                 "com.figma.aliasData": {
-                  "targetVariableId": "VariableID:d8bf27098e6bb08755f3420210c6c67cabb2ab2e/-1:-1",
+                  "targetVariableId": "VariableID:d2b9cbaa35d1214bd2b59421afb12734b003bd1c/-1:-1",
                   "targetVariableName": "color/solid/neutral/50",
                   "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
                   "targetVariableSetName": "primitive"
@@ -954,12 +954,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.9803921580314636,
+              0.9803921580314636,
+              0.9803921580314636
             ],
             "alpha": 1,
-            "hex": "#FFFFFF"
+            "hex": "#FAFAFA"
           },
           "$description": "Inverted foreground — use for text and icons placed on dark or brand-filled surfaces.",
           "$extensions": {
@@ -971,7 +971,7 @@
             ],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:d2b9cbaa35d1214bd2b59421afb12734b003bd1c/-1:-1",
-              "targetVariableName": "color/solid/white",
+              "targetVariableName": "color/solid/neutral/50",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -1612,12 +1612,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.9803921580314636,
+              0.9803921580314636,
+              0.9803921580314636
             ],
             "alpha": 1,
-            "hex": "#FFFFFF"
+            "hex": "#FAFAFA"
           },
           "$description": "Semantic border color for outlines, dividers, focus, and stateful strokes.",
           "$extensions": {
@@ -1627,7 +1627,7 @@
             ],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:d2b9cbaa35d1214bd2b59421afb12734b003bd1c/-1:-1",
-              "targetVariableName": "color/solid/white",
+              "targetVariableName": "color/solid/neutral/50",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -1960,12 +1960,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              1,
-              1,
-              1
+              0.9803921580314636,
+              0.9803921580314636,
+              0.9803921580314636
             ],
             "alpha": 1,
-            "hex": "#FFFFFF"
+            "hex": "#FAFAFA"
           },
           "$description": "Semantic surface color for surfaces and states. Alias this token in components instead of using primitive colors directly.",
           "$extensions": {
@@ -1976,7 +1976,7 @@
             ],
             "com.figma.aliasData": {
               "targetVariableId": "VariableID:d2b9cbaa35d1214bd2b59421afb12734b003bd1c/-1:-1",
-              "targetVariableName": "color/solid/white",
+              "targetVariableName": "color/solid/neutral/50",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -4220,7 +4220,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 2,
+            "$value": 1,
             "$description": "Letter spacing for body small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2073",
@@ -4360,7 +4360,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 4,
+            "$value": 2,
             "$description": "Letter spacing for body x-small text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2074",
@@ -4500,7 +4500,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 2,
+            "$value": 1,
             "$description": "Letter spacing for body large text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2071",
@@ -4640,7 +4640,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 2,
+            "$value": 1,
             "$description": "Letter spacing for body base text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2072",
@@ -4782,7 +4782,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 4,
+            "$value": 2,
             "$description": "Letter spacing for label text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2075",
@@ -4924,7 +4924,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 4,
+            "$value": 2,
             "$description": "Letter spacing for control text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2076",
@@ -5066,7 +5066,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 4,
+            "$value": 2,
             "$description": "Letter spacing for supporting text",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2077",
@@ -5738,7 +5738,7 @@
           },
           "letter-spacing": {
             "$type": "number",
-            "$value": 2,
+            "$value": 1,
             "$description": "Letter spacing for heading 6",
             "$extensions": {
               "com.figma.variableId": "VariableID:40021207:2070",
@@ -8466,6 +8466,30 @@
       }
     },
     "sidebar": {
+      "background": {
+        "default": {
+          "$type": "color",
+          "$value": "{semantic.color.background.default}",
+          "$description": "Default background color for the sidebar",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021848:59680",
+            "com.figma.scopes": [
+              "FRAME_FILL"
+            ]
+          }
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{semantic.color.background.muted.2}",
+          "$description": "Background color for sidebar items on hover",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40021848:59681",
+            "com.figma.scopes": [
+              "FRAME_FILL"
+            ]
+          }
+        }
+      },
       "foreground": {
         "default": {
           "$type": "color",
@@ -8490,30 +8514,6 @@
               "SHAPE_FILL",
               "TEXT_FILL",
               "STROKE"
-            ]
-          }
-        }
-      },
-      "background": {
-        "default": {
-          "$type": "color",
-          "$value": "{semantic.color.background.default}",
-          "$description": "Default background color for the sidebar",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021848:59680",
-            "com.figma.scopes": [
-              "FRAME_FILL"
-            ]
-          }
-        },
-        "hover": {
-          "$type": "color",
-          "$value": "{semantic.color.background.muted.2}",
-          "$description": "Background color for sidebar items on hover",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40021848:59681",
-            "com.figma.scopes": [
-              "FRAME_FILL"
             ]
           }
         }

@@ -321,7 +321,7 @@
       },
       "relaxed": {
         "$type": "number",
-        "$value": 2,
+        "$value": 1,
         "$description": "Tight letter spacing",
         "$extensions": {
           "com.figma.variableId": "VariableID:40021207:2063",
@@ -332,7 +332,7 @@
       },
       "loose": {
         "$type": "number",
-        "$value": 4,
+        "$value": 2,
         "$description": "Wide letter spacing",
         "$extensions": {
           "com.figma.variableId": "VariableID:40021207:2064",
@@ -413,48 +413,6 @@
   },
   "color": {
     "solid": {
-      "black": {
-        "$type": "color",
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            0,
-            0,
-            0
-          ],
-          "alpha": 1,
-          "hex": "#000000"
-        },
-        "$description": "Black — #000000",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:40020621:10988",
-          "com.figma.scopes": [
-            "ALL_FILLS",
-            "STROKE"
-          ]
-        }
-      },
-      "white": {
-        "$type": "color",
-        "$value": {
-          "colorSpace": "srgb",
-          "components": [
-            1,
-            1,
-            1
-          ],
-          "alpha": 1,
-          "hex": "#FFFFFF"
-        },
-        "$description": "White — #FFFFFF",
-        "$extensions": {
-          "com.figma.variableId": "VariableID:40020621:10980",
-          "com.figma.scopes": [
-            "ALL_FILLS",
-            "STROKE"
-          ]
-        }
-      },
       "brand": {
         "50": {
           "$type": "color",
@@ -1620,239 +1578,6 @@
           }
         }
       },
-      "neutral": {
-        "50": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9803921580314636,
-              0.9803921580314636,
-              0.9803921580314636
-            ],
-            "alpha": 1,
-            "hex": "#FAFAFA"
-          },
-          "$description": "Neutral 50 — Lightest tint (#FAFAFA)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10752",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "100": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.9607843160629272,
-              0.9607843160629272,
-              0.9607843160629272
-            ],
-            "alpha": 1,
-            "hex": "#F5F5F5"
-          },
-          "$description": "Neutral 100 — Extra light (#F5F5F5)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10982",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "200": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.8980392217636108,
-              0.8980392217636108,
-              0.8980392217636108
-            ],
-            "alpha": 1,
-            "hex": "#E5E5E5"
-          },
-          "$description": "Neutral 200 — Very light (#E5E5E5)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10908",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "300": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.8313725590705872,
-              0.8313725590705872,
-              0.8313725590705872
-            ],
-            "alpha": 1,
-            "hex": "#D4D4D4"
-          },
-          "$description": "Neutral 300 — Light (#D4D4D4)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10997",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "400": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.6392157077789307,
-              0.6392157077789307,
-              0.6392157077789307
-            ],
-            "alpha": 1,
-            "hex": "#A3A3A3"
-          },
-          "$description": "Neutral 400 — Light-medium (#A3A3A3)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10994",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "500": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.45098039507865906,
-              0.45098039507865906,
-              0.45098039507865906
-            ],
-            "alpha": 1,
-            "hex": "#737373"
-          },
-          "$description": "Neutral 500 — Base (#737373)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:11002",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "600": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.32156863808631897,
-              0.32156863808631897,
-              0.32156863808631897
-            ],
-            "alpha": 1,
-            "hex": "#525252"
-          },
-          "$description": "Neutral 600 — Medium-dark (#525252)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10990",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "700": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.250980406999588,
-              0.250980406999588,
-              0.250980406999588
-            ],
-            "alpha": 1,
-            "hex": "#404040"
-          },
-          "$description": "Neutral 700 — Dark (#404040)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10929",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "800": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.14901961386203766,
-              0.14901961386203766,
-              0.14901961386203766
-            ],
-            "alpha": 1,
-            "hex": "#262626"
-          },
-          "$description": "Neutral 800 — Very dark (#262626)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10926",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "900": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.09019608050584793,
-              0.09019608050584793,
-              0.09019608050584793
-            ],
-            "alpha": 1,
-            "hex": "#171717"
-          },
-          "$description": "Neutral 900 — Extra dark (#171717)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10895",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        },
-        "950": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.03921568766236305,
-              0.03921568766236305,
-              0.03921568766236305
-            ],
-            "alpha": 1,
-            "hex": "#0A0A0A"
-          },
-          "$description": "Neutral 950 — Darkest shade (#0A0A0A)",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020621:10987",
-            "com.figma.scopes": [
-              "ALL_FILLS",
-              "STROKE"
-            ]
-          }
-        }
-      },
       "gray": {
         "50": {
           "$type": "color",
@@ -2079,6 +1804,239 @@
           "$description": "Gray 950 — Darkest shade (#030712)",
           "$extensions": {
             "com.figma.variableId": "VariableID:40020621:10957",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        }
+      },
+      "neutral": {
+        "50": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9803921580314636,
+              0.9803921580314636,
+              0.9803921580314636
+            ],
+            "alpha": 1,
+            "hex": "#FAFAFA"
+          },
+          "$description": "White — #FFFFFF",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10980",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "100": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9607843160629272,
+              0.9607843160629272,
+              0.9607843160629272
+            ],
+            "alpha": 1,
+            "hex": "#F5F5F5"
+          },
+          "$description": "Neutral 100 — Extra light (#F5F5F5)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10982",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "200": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8980392217636108,
+              0.8980392217636108,
+              0.8980392217636108
+            ],
+            "alpha": 1,
+            "hex": "#E5E5E5"
+          },
+          "$description": "Neutral 200 — Very light (#E5E5E5)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10908",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "300": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8313725590705872,
+              0.8313725590705872,
+              0.8313725590705872
+            ],
+            "alpha": 1,
+            "hex": "#D4D4D4"
+          },
+          "$description": "Neutral 300 — Light (#D4D4D4)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10997",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "400": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.6392157077789307,
+              0.6392157077789307,
+              0.6392157077789307
+            ],
+            "alpha": 1,
+            "hex": "#A3A3A3"
+          },
+          "$description": "Neutral 400 — Light-medium (#A3A3A3)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10994",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "500": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.45098039507865906,
+              0.45098039507865906,
+              0.45098039507865906
+            ],
+            "alpha": 1,
+            "hex": "#737373"
+          },
+          "$description": "Neutral 500 — Base (#737373)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:11002",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "600": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.32156863808631897,
+              0.32156863808631897,
+              0.32156863808631897
+            ],
+            "alpha": 1,
+            "hex": "#525252"
+          },
+          "$description": "Neutral 600 — Medium-dark (#525252)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10990",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "700": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.250980406999588,
+              0.250980406999588,
+              0.250980406999588
+            ],
+            "alpha": 1,
+            "hex": "#404040"
+          },
+          "$description": "Neutral 700 — Dark (#404040)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10929",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "800": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.14901961386203766,
+              0.14901961386203766,
+              0.14901961386203766
+            ],
+            "alpha": 1,
+            "hex": "#262626"
+          },
+          "$description": "Neutral 800 — Very dark (#262626)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10926",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "900": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.09019608050584793,
+              0.09019608050584793,
+              0.09019608050584793
+            ],
+            "alpha": 1,
+            "hex": "#171717"
+          },
+          "$description": "Neutral 900 — Extra dark (#171717)",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10895",
+            "com.figma.scopes": [
+              "ALL_FILLS",
+              "STROKE"
+            ]
+          }
+        },
+        "950": {
+          "$type": "color",
+          "$value": {
+            "colorSpace": "srgb",
+            "components": [
+              0.03921568766236305,
+              0.03921568766236305,
+              0.03921568766236305
+            ],
+            "alpha": 1,
+            "hex": "#0A0A0A"
+          },
+          "$description": "Black — #000000",
+          "$extensions": {
+            "com.figma.variableId": "VariableID:40020621:10988",
             "com.figma.scopes": [
               "ALL_FILLS",
               "STROKE"
