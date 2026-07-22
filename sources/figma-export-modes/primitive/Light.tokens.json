@@ -3814,7 +3814,7 @@
       },
       "color": {
         "$type": "color",
-        "$value": "{color.alpha.brand.200}",
+        "$value": "{color.alpha.brand.50}",
         "$description": "Focus ring shadow colour – primary",
         "$extensions": {
           "com.figma.variableId": "VariableID:40020989:6",
@@ -3985,7 +3985,7 @@
       },
       "color": {
         "$type": "color",
-        "$value": "{color.alpha.brand.200}",
+        "$value": "{color.alpha.brand.50}",
         "$description": "Focus ring shadow colour – primary",
         "$extensions": {
           "com.figma.variableId": "VariableID:40021527:1063",
