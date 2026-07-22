@@ -926,12 +926,12 @@
           "$value": {
             "colorSpace": "srgb",
             "components": [
-              0.9529411792755127,
-              0.95686274766922,
-              0.9647058844566345
+              0.9764705896377563,
+              0.9803921580314636,
+              0.9843137264251709
             ],
             "alpha": 1,
-            "hex": "#F3F4F6"
+            "hex": "#F9FAFB"
           },
           "$description": "Default body text and primary icon color.",
           "$extensions": {
@@ -942,8 +942,8 @@
               "STROKE"
             ],
             "com.figma.aliasData": {
-              "targetVariableId": "VariableID:472d604c0ec3965e70add74ac87290da64ff9f89/-1:-1",
-              "targetVariableName": "color/solid/gray/100",
+              "targetVariableId": "VariableID:b66a27a800fee5e7304e5b12c426f3cea8c3b6b7/-1:-1",
+              "targetVariableName": "color/solid/gray/50",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
             }
@@ -1067,12 +1067,12 @@
             "$value": {
               "colorSpace": "srgb",
               "components": [
-                0.9450980424880981,
-                0.9411764740943909,
+                0.6901960968971252,
+                0.6509804129600525,
                 1
               ],
               "alpha": 1,
-              "hex": "#F1F0FF"
+              "hex": "#B0A6FF"
             },
             "$description": "Semantic foreground color for text and icon treatments. Use this when intent matters more than palette choice.",
             "$extensions": {
@@ -1083,8 +1083,8 @@
                 "STROKE"
               ],
               "com.figma.aliasData": {
-                "targetVariableId": "VariableID:6106395aaf3bd38a25411b45214a60dbd4abc70d/-1:-1",
-                "targetVariableName": "color/solid/brand/50",
+                "targetVariableId": "VariableID:87a4e13d59b78ce9681aa51965b685512526776c/-1:-1",
+                "targetVariableName": "color/solid/brand/300",
                 "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
                 "targetVariableSetName": "primitive"
               }
@@ -6761,7 +6761,7 @@
           },
           "primary": {
             "$type": "color",
-            "$value": "{semantic.color.foreground.primary.$root}",
+            "$value": "{semantic.color.foreground.default}",
             "$description": "Button foreground color token. Use for button labels and icons across variants and states.",
             "$extensions": {
               "com.figma.variableId": "VariableID:40020816:11621",
