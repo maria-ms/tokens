@@ -1685,32 +1685,6 @@
             }
           }
         },
-        "focus": {
-          "$type": "color",
-          "$value": {
-            "colorSpace": "srgb",
-            "components": [
-              0.6901960968971252,
-              0.6509804129600525,
-              1
-            ],
-            "alpha": 1,
-            "hex": "#B0A6FF"
-          },
-          "$description": "Focus ring border — visible focus outline applied to interactive elements on keyboard navigation.",
-          "$extensions": {
-            "com.figma.variableId": "VariableID:40020816:11308",
-            "com.figma.scopes": [
-              "STROKE"
-            ],
-            "com.figma.aliasData": {
-              "targetVariableId": "VariableID:87a4e13d59b78ce9681aa51965b685512526776c/-1:-1",
-              "targetVariableName": "color/solid/brand/300",
-              "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
-              "targetVariableSetName": "primitive"
-            }
-          }
-        },
         "primary": {
           "$type": "color",
           "$value": {
@@ -1734,6 +1708,60 @@
               "targetVariableName": "color/solid/gray/700",
               "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
               "targetVariableSetName": "primitive"
+            }
+          }
+        },
+        "focus": {
+          "muted": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.5411764979362488,
+                0.45490196347236633,
+                1
+              ],
+              "alpha": 1,
+              "hex": "#8A74FF"
+            },
+            "$description": "Focus ring border — visible focus outline applied to interactive elements on keyboard navigation.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40020816:11308",
+              "com.figma.scopes": [
+                "STROKE"
+              ],
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:90c2d2a811341cd49b0620e7594e3c3bc2ac4454/-1:-1",
+                "targetVariableName": "color/solid/brand/400",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
+            }
+          },
+          "elevated": {
+            "$type": "color",
+            "$value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.6901960968971252,
+                0.6509804129600525,
+                1
+              ],
+              "alpha": 1,
+              "hex": "#B0A6FF"
+            },
+            "$description": "Focus ring border — visible focus outline applied to interactive elements on keyboard navigation.",
+            "$extensions": {
+              "com.figma.variableId": "VariableID:40022997:24414",
+              "com.figma.scopes": [
+                "STROKE"
+              ],
+              "com.figma.aliasData": {
+                "targetVariableId": "VariableID:87a4e13d59b78ce9681aa51965b685512526776c/-1:-1",
+                "targetVariableName": "color/solid/brand/300",
+                "targetVariableSetId": "VariableCollectionId:c2148d7e524486b6ea9c68ca136cff62e1f4b559/-1:-1",
+                "targetVariableSetName": "primitive"
+              }
             }
           }
         },
@@ -7420,7 +7448,7 @@
         "background": {
           "default": {
             "$type": "color",
-            "$value": "{semantic.color.background.primary.default}",
+            "$value": "{semantic.color.background.primary.deep}",
             "$description": "Checkbox background color token. Use for checkboxes and radio buttons fills across variants and states. states.",
             "$extensions": {
               "com.figma.variableId": "VariableID:40020967:20645",
@@ -7523,7 +7551,7 @@
           },
           "focus": {
             "$type": "color",
-            "$value": "{semantic.color.border.focus}",
+            "$value": "{semantic.color.border.focus.elevated}",
             "$description": "Checkbox border color token. Use for checkbox and radio button strokes across variants and states.",
             "$extensions": {
               "com.figma.variableId": "VariableID:40020967:20669",
